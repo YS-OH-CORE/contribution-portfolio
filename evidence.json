@@ -2,16 +2,95 @@
   "schema": "zero-youngseok-portfolio/1",
   "published_on": "2026-10-06",
   "signature": "Zero × Youngseok Oh",
-  "case_count": 8,
+  "case_count": 9,
   "count_unit": "selected collaboration cases, not comments, tests or upstream merges",
   "cases": [
-    {"id":"01","topic":"hermes-request-binding","outcome":"author_branch_patch_and_test_adoption","source_date":"2026-09-12","source":"https://github.com/NousResearch/hermes-agent/pull/22982#issuecomment-5643327201","external_author":"MestreY0d4-Uninter","upstream_merge_claimed":false},
-    {"id":"02","topic":"hermes-http-recovery-tests","outcome":"verbatim_test_reuse_and_coauthor_credit","source_date":"2026-09-28","source":"https://github.com/NousResearch/hermes-agent/pull/121944#issuecomment-5863926910","external_author":"liuhao1024","upstream_merge_claimed":false},
-    {"id":"03","topic":"langgraph-parent-command-compatibility","outcome":"proposal_author_design_correction_and_thanks","source_date":"2026-10-04","source":"https://github.com/langchain-ai/langgraph/issues/9072#issuecomment-5980134186","external_author":"impartshadow","upstream_merge_claimed":false},
-    {"id":"04","topic":"tam-saved-verdict-reporting","outcome":"public_report_credit","source_date":"2026-09-24","source":"https://github.com/vbcherepanov/total-agent-memory/commit/55d0ab0124ca4fca81479a5bcafa262aaaf0e19e","external_author":"vbcherepanov","scope":"saved verdicts and reporting, not full-system certification"},
-    {"id":"05","topic":"hermes-late-session-restore","outcome":"author_reported_failure_confirmation_and_fix","source_date":"2026-10-01","source":"https://github.com/NousResearch/hermes-agent/pull/130126#issuecomment-5932499656","external_author":"PiToTheOneHalvth","external_ai_assistance_disclosed":true,"upstream_merge_claimed":false},
-    {"id":"06","topic":"hermes-json-interruption-false-positive","outcome":"author_reported_regression_coverage_added","source_date":"2026-10-01","source":"https://github.com/NousResearch/hermes-agent/pull/107809#issuecomment-5931462372","external_author":"KoNit-K","upstream_merge_claimed":false},
-    {"id":"07","topic":"hermes-signal-note-isolation","outcome":"participant_runtime_use_confirmation","source_date":"2026-09-24","source":"https://github.com/NousResearch/hermes-agent/issues/121970#issuecomment-5823143850","external_author":"ren2140eth","upstream_merge_claimed":false},
-    {"id":"08","topic":"hermes-explicit-stop-classification","outcome":"narrow_branch_hardening_with_causal_correction","source_date":"2026-09-23","source":"https://github.com/NousResearch/hermes-agent/pull/84236#issuecomment-5786674461","external_author":"Halldrix","broader_cli_explanation_corrected":true,"upstream_merge_claimed":false}
-  ]
+    {
+      "id": "01",
+      "topic": "hermes-request-binding",
+      "outcome": "author_branch_patch_and_test_adoption",
+      "source_date": "2026-09-12",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/22982#issuecomment-5643327201",
+      "external_author": "MestreY0d4-Uninter",
+      "upstream_merge_claimed": false
+    },
+    {
+      "id": "02",
+      "topic": "hermes-http-recovery-tests",
+      "outcome": "verbatim_test_reuse_and_coauthor_credit",
+      "source_date": "2026-09-28",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/121944#issuecomment-5863926910",
+      "external_author": "liuhao1024",
+      "upstream_merge_claimed": false
+    },
+    {
+      "id": "03",
+      "topic": "langgraph-parent-command-compatibility",
+      "outcome": "proposal_author_design_correction_and_thanks",
+      "source_date": "2026-10-04",
+      "source": "https://github.com/langchain-ai/langgraph/issues/9072#issuecomment-5980134186",
+      "external_author": "impartshadow",
+      "upstream_merge_claimed": false
+    },
+    {
+      "id": "04",
+      "topic": "tam-saved-verdict-reporting",
+      "outcome": "public_report_credit",
+      "source_date": "2026-09-24",
+      "source": "https://github.com/vbcherepanov/total-agent-memory/commit/55d0ab0124ca4fca81479a5bcafa262aaaf0e19e",
+      "external_author": "vbcherepanov",
+      "scope": "saved verdicts and reporting, not full-system certification"
+    },
+    {
+      "id": "05",
+      "topic": "hermes-late-session-restore",
+      "outcome": "author_reported_failure_confirmation_and_fix",
+      "source_date": "2026-10-01",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/130126#issuecomment-5932499656",
+      "external_author": "PiToTheOneHalvth",
+      "external_ai_assistance_disclosed": true,
+      "upstream_merge_claimed": false
+    },
+    {
+      "id": "06",
+      "topic": "hermes-json-interruption-false-positive",
+      "outcome": "author_reported_regression_coverage_added",
+      "source_date": "2026-10-01",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/107809#issuecomment-5931462372",
+      "external_author": "KoNit-K",
+      "upstream_merge_claimed": false
+    },
+    {
+      "id": "07",
+      "topic": "hermes-signal-note-isolation",
+      "outcome": "participant_runtime_use_confirmation",
+      "source_date": "2026-09-24",
+      "source": "https://github.com/NousResearch/hermes-agent/issues/121970#issuecomment-5823143850",
+      "external_author": "ren2140eth",
+      "upstream_merge_claimed": false
+    },
+    {
+      "id": "08",
+      "topic": "hermes-explicit-stop-classification",
+      "outcome": "narrow_branch_hardening_with_causal_correction",
+      "source_date": "2026-09-23",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/84236#issuecomment-5786674461",
+      "external_author": "Halldrix",
+      "broader_cli_explanation_corrected": true,
+      "upstream_merge_claimed": false
+    },
+    {
+      "id": "09",
+      "topic": "mem0-recency-pool-counterexample",
+      "outcome": "explicit_public_attribution_of_counterexample_in_design_comparison",
+      "source_date": "2026-10-05",
+      "source": "https://github.com/mem0ai/mem0/issues/7535#issuecomment-5992249148",
+      "external_author": "sattyamjjain",
+      "code_adoption_claimed": false,
+      "upstream_merge_claimed": false,
+      "external_tool_authorship_claimed": false,
+      "scope": "Our pinned-source counterexample was cited to compare an existing resolver; no causal claim that our work created that resolver."
+    }
+  ],
+  "updated_on": "2026-10-06"
 }

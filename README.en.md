@@ -5,9 +5,9 @@
 
 [한국어](README.md) · [Detailed case notes](CASES.ko.md) · [Source index](evidence.json) · [Support the work](https://ko-fi.com/ysohcore)
 
-## Eight selected contributions
+## Nine selected contributions
 
-A source-linked collection of adopted patches and tests, confirmed use, a corrected design, and published credit. These are eight collaboration cases, **not eight upstream merges or institutional endorsements**. Dates refer to the underlying external records. The collection does not claim that each branch has been merged today.
+A source-linked collection of adopted patches and tests, confirmed use, a corrected design, published credit, and an attributed technical reference. These are nine collaboration cases, **not nine upstream merges or institutional endorsements**. Dates refer to the underlying external records. The collection does not claim that each branch has been merged today.
 
 | Case | Contribution | External outcome |
 |---|---|---|
@@ -19,6 +19,7 @@ A source-linked collection of adopted patches and tests, confirmed use, a correc
 | [06 · Hermes replay cleanup](CASES.ko.md#06) | Identified valid JSON scalar/list payloads that merely quote an interruption marker | Author added regression coverage for both forms and reported seven checks passing |
 | [07 · Hermes Signal notes](CASES.ko.md#07) | Suggested a narrow opt-out that preserves group-sync behavior | Participant implemented it on a linked secondary device and reported expected runtime behavior |
 | [08 · Hermes stop classification](CASES.ko.md#08) | Reviewed an explicit user-stop versus redirect boundary | Author hardened the branch; their end-to-end experiment also corrected our broader CLI explanation |
+| [09 · Mem0 recency counterexample](CASES.ko.md#09) | Reproduced a ranking reversal caused by an unreturned candidate | Another memory-tool author explicitly cited our counterexample when comparing their existing design; not code adoption or authorship of that tool |
 
 ## Roles and evidence
 
@@ -32,4 +33,4 @@ Work and test first, preserve candidates privately, then publish a concise case 
 
 [Publication criteria](PUBLICATION.md) · [Technical workbench](https://github.com/YS-OH-CORE/second-paddle-notes) · [Ko-fi](https://ko-fi.com/ysohcore)
 
-First edition: **6 October 2026**.
+First edition: **6 October 2026**, eight cases. Updated the same day to nine, with the attributed technical reference labeled separately.
