@@ -86,7 +86,9 @@
 
 우리가 제공한 것은 이 거짓 양성의 경계와 검사 필요성입니다. 기존 결과형 검사와 작성자의 구현을 우리의 단독 수정으로 소개하지 않습니다. 해당 댓글은 도구 연결을 통해 게시된 응답이며 별도의 인간 검증을 보증하지 않습니다.
 
-[작성자의 검사 보강 확인](https://github.com/NousResearch/hermes-agent/pull/107809#issuecomment-5931462372)
+**후속 외부 근거:** 이후 upstream #109320가 병합된 뒤, 다른 기여자 **gaoanze888**가 current main을 다시 실행해 object-envelope 쪽은 개선됐지만, 정상적인 `read_file` 내용이 정확한 중단 표시로 끝나는 경우에는 여전히 블록이 제거되는 경계를 재현했습니다. 그 댓글은 tracker를 계속 열어 두는 것이 적절하다고 명시합니다. 이 재실행과 진단은 gaoanze888의 기여이며, 우리의 이전 모든 입력형을 독립적으로 재현했다는 뜻은 아닙니다. 다만 **정상 데이터와 실제 중단을 구별하는 문제 계열이 후속 수정 뒤에도 완전히 닫히지 않았다는 별도 공개 근거**입니다.
+
+[작성자의 검사 보강 확인](https://github.com/NousResearch/hermes-agent/pull/107809#issuecomment-5931462372) · [후속 current-main 재현](https://github.com/NousResearch/hermes-agent/issues/107807#issuecomment-5653710322)
 
 <a id="07"></a>
 ## 07. Hermes Signal: 개인 메모와 그룹 동기화 분리
