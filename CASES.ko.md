@@ -133,6 +133,23 @@
 
 [외부 인용 원문](https://github.com/mem0ai/mem0/issues/7535#issuecomment-5992249148) · [우리의 실제 반례와 대조 검사](https://github.com/YS-OH-CORE/second-paddle-notes/tree/d8ca30464d6e3e0a03e5db37d9c0b06bc80b3010/checks/mem0-recency-pool-20261005)
 
+<a id="10"></a>
+## 10. Qdrant: 실패한 영속 삭제 뒤 남은 점이 재시도에서 사라지는 경계
+
+**확인된 단계: 다른 기여자가 우리 이슈를 직접 연결한 수정 PR·회귀검사 작성** · 2026-09-30
+
+Qdrant 로컬 영속 모드에서 필터 삭제가 중간에 실패하면, 아직 SQLite에 남은 점이 메모리에서는 이미 삭제된 것으로 표시되어 같은 필터 재시도가 그 점을 다시 선택하지 못하는 조건을 실제 SQLite 저장소로 재현했습니다. 원래 이슈 **#1510**은 수정안이 아니라 관찰·재현·계약 보고로 제출했습니다.
+
+다른 기여자 **adityaanikam**은 이후 Qdrant 본체에 **PR #1515**를 열면서 본문 첫 줄에 `Fixes #1510`을 명시했습니다. 그 PR은 각 점을 영속 저장소에서 먼저 삭제한 뒤 메모리 상태를 바꾸도록 순서를 수정하고, 실패 전/후 커밋 조건을 다루는 회귀검사를 추가했습니다. 구현과 테스트 작성은 adityaanikam의 기여입니다.
+
+> Fixes #1510
+
+이것은 우리의 버그 신고가 실제 외부 수정 PR로 이어졌다는 근거입니다. **PR #1515는 현재 열려 있고 병합되지 않았으므로**, Qdrant 본체에 채택되거나 출시됐다고 말하지 않습니다.
+
+후속 검토에서는 그 PR의 정확한 head에서 SQLite `COMMIT`이 `SQLITE_BUSY`로 실패하는 추가 트랜잭션 경계를 발견해 별도 후보 수정과 Windows/Linux 비교를 공개했습니다. 이 후속 후보는 우리의 작업이며, PR 작성자가 반영했다고 확인한 상태는 아닙니다. 따라서 10번 사례의 외부 성과는 **#1510 → 타 기여자의 #1515 수정 PR**까지만 셉니다.
+
+[원래 재현 이슈 #1510](https://github.com/qdrant/qdrant-client/issues/1510) · [외부 수정 PR #1515](https://github.com/qdrant/qdrant-client/pull/1515) · [후속 트랜잭션 경계 검토](https://github.com/qdrant/qdrant-client/pull/1515#issuecomment-5977970925)
+
 ---
 
 [첫 화면으로](README.md) · [다음 사례의 공개 기준](PUBLICATION.md)
