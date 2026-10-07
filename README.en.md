@@ -5,9 +5,9 @@
 
 [한국어](README.md) · [Detailed case notes](CASES.ko.md) · [Source index](evidence.json) · [Support the work](https://ko-fi.com/ysohcore)
 
-## Nine selected contributions
+## Ten selected contributions
 
-A source-linked collection of adopted patches and tests, confirmed use, a corrected design, published credit, and an attributed technical reference. These are nine collaboration cases, **not nine upstream merges or institutional endorsements**. Dates refer to the underlying external records. The collection does not claim that each branch has been merged today.
+A source-linked collection of adopted patches and tests, confirmed use, corrected designs, published credit, attributed technical reuse, and an external fix PR that explicitly links back to our report. These are ten collaboration cases, **not ten upstream merges or institutional endorsements**. Dates refer to the underlying external records. The collection does not claim that each branch has been merged today.
 
 | Case | Contribution | External outcome |
 |---|---|---|
@@ -20,6 +20,7 @@ A source-linked collection of adopted patches and tests, confirmed use, a correc
 | [07 · Hermes Signal notes](CASES.ko.md#07) | Suggested a narrow opt-out that preserves group-sync behavior | Participant implemented it on a linked secondary device and reported expected runtime behavior |
 | [08 · Hermes stop classification](CASES.ko.md#08) | Reviewed an explicit user-stop versus redirect boundary | Author hardened the branch; their end-to-end experiment also corrected our broader CLI explanation |
 | [09 · Mem0 recency counterexample](CASES.ko.md#09) | Reproduced a ranking reversal caused by an unreturned candidate | Another memory-tool author explicitly cited our counterexample when comparing their existing design; not code adoption or authorship of that tool |
+| [10 · Qdrant persistent deletion recovery](CASES.ko.md#10) | Reproduced a real-SQLite retry boundary after a failed local persistent deletion | Another contributor opened upstream PR #1515 with `Fixes #1510` and a regression test; the implementation is theirs and the PR remains open/unmerged |
 
 ## Roles and evidence
 
@@ -33,4 +34,4 @@ Work and test first, preserve candidates privately, then publish a concise case 
 
 [Publication criteria](PUBLICATION.md) · [Technical workbench](https://github.com/YS-OH-CORE/second-paddle-notes) · [Ko-fi](https://ko-fi.com/ysohcore)
 
-First edition: **6 October 2026**, eight cases. Updated the same day to nine, with the attributed technical reference labeled separately.
+First edition: **6 October 2026**, eight cases. Updated to nine with the attributed technical reference, and to ten on 7 October with the Qdrant issue-to-fix-PR outcome labeled separately.
