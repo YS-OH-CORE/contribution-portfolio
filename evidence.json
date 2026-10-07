@@ -2,7 +2,7 @@
   "schema": "zero-youngseok-portfolio/1",
   "published_on": "2026-10-06",
   "signature": "Zero × Youngseok Oh",
-  "case_count": 9,
+  "case_count": 10,
   "count_unit": "selected collaboration cases, not comments, tests or upstream merges",
   "cases": [
     {
@@ -94,6 +94,20 @@
       "upstream_merge_claimed": false,
       "external_tool_authorship_claimed": false,
       "scope": "Our pinned-source counterexample was cited to compare an existing resolver; no causal claim that our work created that resolver."
+    },
+    {
+      "id": "10",
+      "topic": "qdrant-local-persistent-delete-retry",
+      "outcome": "external_fix_pr_explicitly_links_reported_issue",
+      "source_date": "2026-09-30",
+      "source": "https://github.com/qdrant/qdrant-client/pull/1515",
+      "external_author": "adityaanikam",
+      "triggering_report": "https://github.com/qdrant/qdrant-client/issues/1510",
+      "pr_body_links_issue_as": "Fixes #1510",
+      "upstream_merge_claimed": false,
+      "our_followup_source": "https://github.com/qdrant/qdrant-client/pull/1515#issuecomment-5977970925",
+      "followup_adoption_claimed": false,
+      "scope": "Counts the external issue-to-fix-PR outcome. The external contributor owns PR #1515 implementation and regression test; our later transaction-boundary candidate is separate and not claimed adopted."
     }
   ],
   "updated_on": "2026-10-07"
