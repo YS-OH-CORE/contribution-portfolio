@@ -16,7 +16,7 @@ This portfolio does not bypass project contribution policies. It creates no obli
 
 ## Contents and scope
 
-The first edition contained eight source-linked cases. The current edition has nine. The ninth is an explicitly attributed technical reference in a public design discussion, not implementation adoption; this outcome is labeled separately. It has a new repository history and selected portfolio files only. New evidence is added during active work, not through an implied unattended monitor. Nothing here controls other projects or their sessions.
+The first edition contained eight source-linked cases. The current edition has ten. The ninth is an explicitly attributed technical reference in a public design discussion, not implementation adoption. The tenth is an external contributor's upstream fix PR that explicitly links our reported issue with `Fixes #1510`; it is still open and unmerged, and the PR implementation remains that contributor's work. These outcomes are labeled separately. It has a new repository history and selected portfolio files only. New evidence is added during active work, not through an implied unattended monitor. Nothing here controls other projects or their sessions.
 
 The Ko-fi link is the existing public support destination used by the workbench. A link is not a claim of sponsorship revenue, a contract or guaranteed output. Support is optional and is not a payment request to the developers whose responses appear here.
 
