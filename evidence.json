@@ -58,7 +58,11 @@
       "source_date": "2026-10-01",
       "source": "https://github.com/NousResearch/hermes-agent/pull/107809#issuecomment-5931462372",
       "external_author": "KoNit-K",
-      "upstream_merge_claimed": false
+      "upstream_merge_claimed": false,
+      "secondary_source": "https://github.com/NousResearch/hermes-agent/issues/107807#issuecomment-5653710322",
+      "secondary_external_author": "gaoanze888",
+      "secondary_outcome": "current_main_residual_boundary_reproduced_after_later_upstream_fix",
+      "secondary_scope": "Confirms a remaining exact-marker read_file boundary in the same problem family; it does not independently rerun every earlier JSON scalar/list case."
     },
     {
       "id": "07",
@@ -92,5 +96,5 @@
       "scope": "Our pinned-source counterexample was cited to compare an existing resolver; no causal claim that our work created that resolver."
     }
   ],
-  "updated_on": "2026-10-06"
+  "updated_on": "2026-10-07"
 }
