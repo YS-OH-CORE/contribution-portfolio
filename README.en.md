@@ -5,9 +5,11 @@
 
 [한국어](README.md) · [Detailed case notes](CASES.ko.md) · [Source index](evidence.json) · [Support the work](https://ko-fi.com/ysohcore)
 
-## Ten selected contributions
+## Eleven selected contributions
 
-A source-linked collection of adopted patches and tests, confirmed use, corrected designs, published credit, attributed technical reuse, and an external fix PR that explicitly links back to our report. These are ten collaboration cases, **not ten upstream merges or institutional endorsements**. Dates refer to the underlying external records. The collection does not claim that each branch has been merged today.
+A source-linked collection of adopted patches and tests, confirmed use, corrected designs, published credit, attributed technical reuse, an external fix PR that explicitly links back to our report, and a merged verifier fix. These are eleven collaboration cases, **not eleven upstream merges or institutional endorsements**. Dates refer to the underlying external records. The collection does not claim that each branch has been merged today.
+
+**Added 14 October: [CanIToolCall report integrity, case 11](CASES.ko.md#11).** The maintainer reported reproducing the regression tests, approved the fix, and merged [PR #31](https://github.com/redd34/canitoolcall/pull/31). This publication adds no new runtime or release validation. The first ten cases retain their own dated evidence and limits.
 
 | Case | Contribution | External outcome |
 |---|---|---|
@@ -21,6 +23,7 @@ A source-linked collection of adopted patches and tests, confirmed use, correcte
 | [08 · Hermes stop classification](CASES.ko.md#08) | Reviewed an explicit user-stop versus redirect boundary | Author hardened the branch; their end-to-end experiment also corrected our broader CLI explanation |
 | [09 · Mem0 recency counterexample](CASES.ko.md#09) | Reproduced a ranking reversal caused by an unreturned candidate | Another memory-tool author explicitly cited our counterexample when comparing their existing design; not code adoption or authorship of that tool |
 | [10 · Qdrant persistent deletion recovery](CASES.ko.md#10) | Reproduced a real-SQLite retry boundary after a failed local persistent deletion | Another contributor opened upstream PR #1515 with `Fixes #1510` and a regression test; the implementation is theirs and the PR remains open/unmerged |
+| [11 · CanIToolCall report integrity](CASES.ko.md#11) | Report validation and 54 synthetic regression/control cases preventing false success from incomplete comparisons | Maintainer reported rerunning the tests, approved the change, and merged PR #31 into main |
 
 ## Roles and evidence
 
@@ -34,4 +37,4 @@ Work and test first, preserve candidates privately, then publish a concise case 
 
 [Publication criteria](PUBLICATION.md) · [Technical workbench](https://github.com/YS-OH-CORE/second-paddle-notes) · [Ko-fi](https://ko-fi.com/ysohcore)
 
-First edition: **6 October 2026**, eight cases. Updated to nine with the attributed technical reference, and to ten on 7 October with the Qdrant issue-to-fix-PR outcome labeled separately.
+First edition: **6 October 2026**, eight cases. Updated to nine with the attributed technical reference, to ten on 7 October with the Qdrant issue-to-fix-PR outcome, and to eleven on 14 October with the merged CanIToolCall report-integrity fix. Outcomes remain labeled separately.

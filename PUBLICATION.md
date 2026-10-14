@@ -16,7 +16,9 @@ This portfolio does not bypass project contribution policies. It creates no obli
 
 ## Contents and scope
 
-The first edition contained eight source-linked cases. The current edition has ten. The ninth is an explicitly attributed technical reference in a public design discussion, not implementation adoption. The tenth is an external contributor's upstream fix PR that explicitly links our reported issue with `Fixes #1510`; it is still open and unmerged, and the PR implementation remains that contributor's work. These outcomes are labeled separately. It has a new repository history and selected portfolio files only. New evidence is added during active work, not through an implied unattended monitor. Nothing here controls other projects or their sessions.
+The first edition contained eight source-linked cases. The current edition has eleven. The ninth is an explicitly attributed technical reference in a public design discussion, not implementation adoption. The tenth is an external contributor's upstream fix PR that explicitly links our reported issue with `Fixes #1510`; its recorded state is open and unmerged, and the PR implementation remains that contributor's work. The eleventh is our CanIToolCall report-integrity fix, approved and merged into main in PR #31 on 13 October UTC / 14 October KST. Its reported reruns and merge are linked separately; no release or new engine validation is claimed. These outcomes are labeled separately, and earlier cases retain their own check dates.
+
+This repository has a new history and selected portfolio files only. New evidence is added during active work, not through an implied unattended monitor. Nothing here controls other projects or their sessions. The 14 October addition publishes a concise technical case and already-public sources; it does not make the private working collection, private correspondence, or operational records public.
 
 The Ko-fi link is the existing public support destination used by the workbench. A link is not a claim of sponsorship revenue, a contract or guaranteed output. Support is optional and is not a payment request to the developers whose responses appear here.
 

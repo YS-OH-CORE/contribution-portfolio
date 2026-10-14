@@ -2,7 +2,7 @@
   "schema": "zero-youngseok-portfolio/1",
   "published_on": "2026-10-06",
   "signature": "Zero × Youngseok Oh",
-  "case_count": 10,
+  "case_count": 11,
   "count_unit": "selected collaboration cases, not comments, tests or upstream merges",
   "cases": [
     {
@@ -108,7 +108,37 @@
       "our_followup_source": "https://github.com/qdrant/qdrant-client/pull/1515#issuecomment-5977970925",
       "followup_adoption_claimed": false,
       "scope": "Counts the external issue-to-fix-PR outcome. The external contributor owns PR #1515 implementation and regression test; our later transaction-boundary candidate is separate and not claimed adopted."
+    },
+    {
+      "id": "11",
+      "topic": "canitoolcall-verifier-report-integrity",
+      "outcome": "maintainer_reported_reproduction_and_upstream_merged_fix",
+      "source_date": "2026-10-14",
+      "source_date_timezone": "Asia/Seoul",
+      "source": "https://github.com/redd34/canitoolcall/pull/31#pullrequestreview-5508476450",
+      "external_author": "redd34",
+      "external_role": "maintainer reviewing and merging the contribution",
+      "triggering_report": "https://github.com/redd34/canitoolcall/issues/30",
+      "pull_request": "https://github.com/redd34/canitoolcall/pull/31",
+      "contributor_account": "YS-OH-CORE",
+      "reviewed_head": "188ad967b989544cf356979a05c5feaf5da0b616",
+      "merge_commit": "03d9149b2d6590576b92307b1260aefb198d2342",
+      "merged_at_utc": "2026-10-13T18:55:07Z",
+      "upstream_merge_claimed": true,
+      "release_claimed": false,
+      "checked_on": "2026-10-14",
+      "reported_tests": {
+        "source": "maintainer review, not a new run during publication",
+        "environment": "macOS / Python 3.12",
+        "focused_passed": 54,
+        "original_with_new_tests_failed": 47,
+        "original_with_new_tests_passed": 7,
+        "full_suite_passed": 526,
+        "engine_dependent_skips": 367,
+        "focused_included_in_full_suite": true
+      },
+      "scope": "One report-integrity collaboration from issue #30 to merged PR #31. Synthetic report fault injection, not 54 engine defects. No new execution, release validation, or acceptance claim for PR #33 or issue #9."
     }
   ],
-  "updated_on": "2026-10-07"
+  "updated_on": "2026-10-14"
 }
