@@ -2,7 +2,7 @@
   "schema": "zero-youngseok-portfolio/1",
   "published_on": "2026-10-06",
   "signature": "Zero × Youngseok Oh",
-  "case_count": 11,
+  "case_count": 14,
   "count_unit": "selected collaboration cases, not comments, tests or upstream merges",
   "cases": [
     {
@@ -98,16 +98,34 @@
     {
       "id": "10",
       "topic": "qdrant-local-persistent-delete-retry",
-      "outcome": "external_fix_pr_explicitly_links_reported_issue",
+      "outcome": "our_report_explicitly_linked_to_external_upstream_merged_fix",
       "source_date": "2026-09-30",
       "source": "https://github.com/qdrant/qdrant-client/pull/1515",
       "external_author": "adityaanikam",
       "triggering_report": "https://github.com/qdrant/qdrant-client/issues/1510",
       "pr_body_links_issue_as": "Fixes #1510",
-      "upstream_merge_claimed": false,
+      "upstream_merge_claimed": true,
       "our_followup_source": "https://github.com/qdrant/qdrant-client/pull/1515#issuecomment-5977970925",
       "followup_adoption_claimed": false,
-      "scope": "Counts the external issue-to-fix-PR outcome. The external contributor owns PR #1515 implementation and regression test; our later transaction-boundary candidate is separate and not claimed adopted."
+      "scope": "Our issue #1510 is explicitly linked by PR #1515, merged into the upstream dev branch. Original implementation and regression tests are by adityaanikam, with extensions by joein. Our subsequent SQLITE_BUSY review is linked, but our candidate patch is not claimed cherry-picked or explicitly credited by this merge.",
+      "previous_public_status": {
+        "edition_date": "2026-10-14",
+        "outcome": "external_fix_pr_explicitly_links_reported_issue",
+        "upstream_merge_claimed": false,
+        "scope": "Counts the external issue-to-fix-PR outcome. The external contributor owns PR #1515 implementation and regression test; our later transaction-boundary candidate is separate and not claimed adopted."
+      },
+      "external_implementation_authors": [
+        "adityaanikam",
+        "joein"
+      ],
+      "release_claimed": false,
+      "merge_commit": "ac865e8b65bcbe800a83b1dd01571aee02fcead3",
+      "merge_target_branch": "dev",
+      "merged_at_utc": "2026-10-13T12:49:45Z",
+      "merged_by": "joein",
+      "checked_at_utc": "2026-10-18T23:54:40.976Z",
+      "checked_on": "2026-10-19",
+      "our_role": "original reproduction report plus subsequent real-SQLite transaction-boundary review and separately published candidate patch"
     },
     {
       "id": "11",
@@ -126,7 +144,7 @@
       "merged_at_utc": "2026-10-13T18:55:07Z",
       "upstream_merge_claimed": true,
       "release_claimed": false,
-      "checked_on": "2026-10-14",
+      "checked_on": "2026-10-19",
       "reported_tests": {
         "source": "maintainer review, not a new run during publication",
         "environment": "macOS / Python 3.12",
@@ -137,8 +155,173 @@
         "engine_dependent_skips": 367,
         "focused_included_in_full_suite": true
       },
-      "scope": "One report-integrity collaboration from issue #30 to merged PR #31. Synthetic report fault injection, not 54 engine defects. No new execution, release validation, or acceptance claim for PR #33 or issue #9."
+      "scope": "One report-integrity collaboration from issue #30 to merged PR #31. Synthetic report fault injection, not 54 engine defects. No new execution, release validation, or acceptance claim for PR #33 or issue #9.",
+      "checked_at_utc": "2026-10-18T23:54:41.313Z",
+      "merge_target_branch": "main"
+    },
+    {
+      "id": "12",
+      "topic": "canitoolcall-compiled-engine-verifier",
+      "outcome": "externally_reproduced_regression_and_current_head_approved_implementation",
+      "added_on": "2026-10-19",
+      "source_date": "2026-10-16",
+      "source": "https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5543659056",
+      "external_author": "redd34",
+      "pull_request": "https://github.com/redd34/canitoolcall/pull/33",
+      "contributor_account": "YS-OH-CORE",
+      "state": "open",
+      "draft": false,
+      "reviewed_head": "fc4033631e03c598a6c7e6f4628dc80916220597",
+      "target_branch": "main",
+      "upstream_merge_claimed": false,
+      "merge_commit": null,
+      "merged_at_utc": null,
+      "release_claimed": false,
+      "checked_on": "2026-10-19",
+      "checked_at_utc": "2026-10-18T23:54:41.228Z",
+      "current_head_approval": [
+        {
+          "id": 5543659056,
+          "url": "https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5543659056",
+          "author": "redd34",
+          "association": "OWNER",
+          "state": "APPROVED",
+          "commit_id": "fc4033631e03c598a6c7e6f4628dc80916220597",
+          "submitted_at": "2026-10-16T06:01:44Z"
+        }
+      ],
+      "our_role": "Zero가 구현·회귀검사·실제 과거 Ollama/llama.cpp 비교 및 리뷰 수정을 수행했고 Youngseok Oh가 방향을 제시했다.",
+      "attribution": "Youngseok Oh supplies questions, direction and corrections; Zero performs the described AI analysis, implementation, execution and writing. Original project work and recipient reruns remain with their authors.",
+      "initial_review": "https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5508451108",
+      "external_finding_reproduction": {
+        "source": "https://github.com/redd34/canitoolcall/issues/37",
+        "author": "redd34",
+        "reported_reproduction_date": "2026-10-14",
+        "our_account_explicitly_credited": true,
+        "scope": "The maintainer reports a separate build reproducing the Ollama #18663 regression found with our verifier: two improved cases and one formerly recoverable malformed input now failing. The parser repair proposed there is the maintainer's work."
+      },
+      "reported_tests": {
+        "source": "maintainer current-head review",
+        "environment": "macOS / Python 3.12",
+        "compiled_tests_passed": 93,
+        "full_suite_passed": 622,
+        "engine_dependent_skips": 367,
+        "focused_included_in_full_suite": true,
+        "real_engine_build_at_reviewed_head": false
+      },
+      "earlier_engine_run_verifier_head": "32adbbe96ca22185832f204050ccb5b860d0d960",
+      "scope": "One implemented verifier, its detected regression and reviewer-requested corrections. Approved/open/unmerged. The original engine executions and the separately reproduced finding are distinct from current-head verifier tests. Environment and process separation are not a security sandbox."
+    },
+    {
+      "id": "13",
+      "topic": "canitoolcall-recovery-discrepancy-triage",
+      "outcome": "maintainer_replay_and_upstream_merged_triage_contribution",
+      "added_on": "2026-10-19",
+      "source_date": "2026-09-27",
+      "source": "https://github.com/redd34/canitoolcall/pull/13#pullrequestreview-5330173478",
+      "external_author": "redd34",
+      "pull_request": "https://github.com/redd34/canitoolcall/pull/13",
+      "contributor_account": "YS-OH-CORE",
+      "state": "closed",
+      "draft": false,
+      "reviewed_head": "7f6242c267175a7fda9659ccf40f3c0248c886e3",
+      "target_branch": "main",
+      "upstream_merge_claimed": true,
+      "merge_commit": "9a83ac59b175342586f220ae313e606d706ea6f3",
+      "merged_at_utc": "2026-10-13T18:47:12Z",
+      "release_claimed": false,
+      "checked_on": "2026-10-19",
+      "checked_at_utc": "2026-10-18T23:54:41.034Z",
+      "current_head_approval": [
+        {
+          "id": 5330173478,
+          "url": "https://github.com/redd34/canitoolcall/pull/13#pullrequestreview-5330173478",
+          "author": "redd34",
+          "association": "OWNER",
+          "state": "APPROVED",
+          "commit_id": "7f6242c267175a7fda9659ccf40f3c0248c886e3",
+          "submitted_at": "2026-09-27T11:51:07Z"
+        }
+      ],
+      "our_role": "Zero가 9개 vLLM recovery discrepancy를 triage하고 생성기·설명 기록을 수정했다. 원래 엔진·fixture·기대값·점수 archive의 저작과 결과를 바꾸지 않았다.",
+      "attribution": "Youngseok Oh supplies questions, direction and corrections; Zero performs the described AI analysis, implementation, execution and writing. Original project work and recipient reruns remain with their authors.",
+      "initial_review": "https://github.com/redd34/canitoolcall/pull/13#pullrequestreview-5325619945",
+      "reported_replay": {
+        "source": "maintainer reviews",
+        "engine": "vLLM 0.30.0",
+        "initial_cases_replayed": 8,
+        "initial_remaining_case": "snapshot checked; replay blocked by tokenizer cache",
+        "final_selected_cases_replayed": 2,
+        "initial_and_final_may_overlap": true,
+        "triage_output_regeneration_byte_equal_reported": true
+      },
+      "scope": "Nine discrepancy classifications and explanations in CanIToolCall, not nine repaired engine bugs or a vLLM merge. The unresolved newline-recovery contract stays unclassified. Original engine, fixtures and expectations retain their authorship."
+    },
+    {
+      "id": "14",
+      "topic": "mnemo-json-type-fact-identity",
+      "outcome": "owner_requested_fix_reported_tests_and_current_head_approval",
+      "added_on": "2026-10-19",
+      "source_date": "2026-10-10",
+      "source": "https://github.com/sattyamjjain/mnemo/pull/204#issuecomment-6096480334",
+      "external_author": "sattyamjjain",
+      "pull_request": "https://github.com/sattyamjjain/mnemo/pull/204",
+      "contributor_account": "YS-OH-CORE",
+      "state": "open",
+      "draft": false,
+      "reviewed_head": "8d3c06a4571eca50641001d3639256b71f756e80",
+      "target_branch": "main",
+      "upstream_merge_claimed": false,
+      "merge_commit": null,
+      "merged_at_utc": null,
+      "release_claimed": false,
+      "checked_on": "2026-10-19",
+      "checked_at_utc": "2026-10-18T23:54:41.368Z",
+      "current_head_approval": [
+        {
+          "id": 5478621062,
+          "url": "https://github.com/sattyamjjain/mnemo/pull/204#pullrequestreview-5478621062",
+          "author": "sattyamjjain",
+          "association": "OWNER",
+          "state": "APPROVED",
+          "commit_id": "8d3c06a4571eca50641001d3639256b71f756e80",
+          "submitted_at": "2026-10-10T10:29:20Z"
+        }
+      ],
+      "our_role": "Zero가 JSON 타입 충돌 반례·후보 구현·native Rust 모듈 검증·요청된 다섯 검사 통합을 수행했다. 원래 resolver는 Mnemo 기여자의 작업이다.",
+      "attribution": "Youngseok Oh supplies questions, direction and corrections; Zero performs the described AI analysis, implementation, execution and writing. Original project work and recipient reruns remain with their authors.",
+      "triggering_report": "https://github.com/sattyamjjain/mnemo/issues/203",
+      "owner_bug_confirmation_and_request": "https://github.com/sattyamjjain/mnemo/issues/203#issuecomment-6074639579",
+      "reported_tests": {
+        "source": "owner comment",
+        "resolver_tests_passed": 11,
+        "proposed_tests_included": 5,
+        "full_project_build_or_ci_success_claimed": false
+      },
+      "remaining_conditions": {
+        "dco_signoff_present": false,
+        "workflow_runs_requiring_action": 5,
+        "workflow_conclusion": "action_required",
+        "full_ci_pass_claimed": false
+      },
+      "scope": "Preserves JSON types in opt-in read post-processing fact identity, including numeric 42 versus string 42. It is not database deletion or a full retrieval-quality claim. Owner approval is recorded; the PR is open/unmerged and contribution sign-off/CI progress remain pending."
     }
   ],
-  "updated_on": "2026-10-14"
+  "updated_on": "2026-10-19",
+  "featured_case_ids": [
+    "11",
+    "12",
+    "10",
+    "01",
+    "02",
+    "04"
+  ],
+  "current_state_checked_case_ids": [
+    "10",
+    "11",
+    "12",
+    "13",
+    "14"
+  ],
+  "edition_note": "Three selected collaborations added; the existing Qdrant case updated after its external fix merged into the upstream dev branch. Original case IDs and source dates remain stable."
 }
