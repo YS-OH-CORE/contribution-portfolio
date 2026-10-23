@@ -3,9 +3,13 @@
 
 **Find the failure. Make it reproducible. Help someone make a better change.**
 
-[한국어](README.md) · [All 14 cases](CASES.ko.md) · [Public source index](evidence.json) · [Support the work](https://ko-fi.com/ysohcore)
+[한국어](README.md) · [All 15 cases](CASES.ko.md) · [Public source index](evidence.json) · [Support the work](https://ko-fi.com/ysohcore)
 
-## Fourteen selected contributions
+## 23 October update
+
+Qdrant case 10 now has release evidence and a six-scenario wheel comparison. New case 15 records a Mem0 author applying our deletion-consumer feedback, followed by an unchanged 16-case rerun. The collection now contains **15 selected cases**, not 15 merged PRs. [Dated sources and limits](updates/2026-10-23-qdrant-mem0.ko.md).
+
+## Fifteen selected contributions
 
 Merged fixes, findings another developer reproduced, tests reused with credit, and reviews that changed a design. Each case connects a concrete problem to our contribution and the recipient's recorded response.
 
@@ -31,11 +35,11 @@ We built a verifier that separately builds and compares the original and propose
 
 ### 10 · Make a failed deletion recoverable on retry
 
-**Qdrant client · Our report linked to a merged external fix**
+**Qdrant · Our report linked to an external fix released in v1.20.0**
 
-Using a real SQLite store, we reproduced a partial deletion that hid surviving records from a retry, allowing them to reappear after reopening the collection. PR #1515 explicitly linked our report. **adityaanikam** and **joein** contributed the fix and integration, which was merged into upstream's `dev` branch on 13 October. Our contribution was the reproducible report and follow-up review; the upstream implementation belongs to those contributors.
+We reproduced a persistent local deletion failure that hid unreached points from a same-filter retry. adityaanikam and joein implemented and integrated the fix. The maintainer confirmed the released fix on 23 October. Our fresh six-scenario comparison reproduces four failures in 1.19.1 and passes all six in 1.20.0, including retry and reopened-state checks. The implementation remains theirs.
 
-[Read the case](CASES.ko.md#10) · [Original report](https://github.com/qdrant/qdrant-client/issues/1510) · [Merged external fix](https://github.com/qdrant/qdrant-client/pull/1515)
+[Read the case](CASES.ko.md#10) · [Maintainer confirmation](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021) · [Release verification](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6363499667)
 
 ### 01 · Keep an approval attached to the request that triggered it
 
@@ -61,10 +65,11 @@ We checked saved evaluation verdicts and the conclusions drawn from them: six Lo
 
 [Read the case](CASES.ko.md#04) · [Published credit](https://github.com/vbcherepanov/total-agent-memory/commit/55d0ab0124ca4fca81479a5bcafa262aaaf0e19e)
 
-## Eight more collaborations
+## Nine more collaborations
 
 | Case | What we contributed | Confirmed outcome |
 |---|---|---|
+| [15 · Find consumers missed by a flat-list change](CASES.ko.md#15) | A real-store 16-case matrix covering sync and async deletion | The author fixed both consumers and added regression tests. Exact revised head passed all 16 unchanged cases. **Author branch, not merged.** |
 | [13 · Distinguish the causes behind similar failures](CASES.ko.md#13) | Replay-based analysis and clearer classification of nine parser-recovery discrepancies | The CanIToolCall owner replayed selected cases, approved the explanations, and merged the triage changes in #13. The changes are in CanIToolCall's triage and reporting files. |
 | [14 · Keep numeric `42` and string `"42"` as different facts](CASES.ko.md#14) | A reproduction, type-preserving fix, and regression tests for mnemo's read-side fact resolver | The owner confirmed the bug, reported all 11 resolver tests passing, and approved #204. It remains unmerged, with DCO sign-off and CI execution pending. |
 | [03 · Catch a compatibility regression before implementation](CASES.ko.md#03) | Showed why an existing nested-task exclusion must precede LangGraph's proposed command classification | The proposal author corrected the public design and acknowledged the review. |
@@ -84,4 +89,4 @@ The linked records preserve source dates, code revisions, and the scope of each 
 
 ---
 
-First published **6 October 2026** · **14 selected cases as of 19 October 2026 KST** · Cases 12–14 added and Qdrant's merged outcome refreshed in this edition. Earlier contributions retain their original evidence and dates.
+First published **6 October 2026** · **15 selected cases as of 23 October 2026 KST** · Case 15 added; case 10 now includes release evidence. The earlier 19 October edition added cases 12–14. Earlier contributions retain their original evidence and dates.

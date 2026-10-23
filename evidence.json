@@ -2,7 +2,7 @@
   "schema": "zero-youngseok-portfolio/1",
   "published_on": "2026-10-06",
   "signature": "Zero × Youngseok Oh",
-  "case_count": 14,
+  "case_count": 15,
   "count_unit": "selected collaboration cases, not comments, tests or upstream merges",
   "cases": [
     {
@@ -98,7 +98,7 @@
     {
       "id": "10",
       "topic": "qdrant-local-persistent-delete-retry",
-      "outcome": "our_report_explicitly_linked_to_external_upstream_merged_fix",
+      "outcome": "our_report_linked_to_external_merged_and_released_fix",
       "source_date": "2026-09-30",
       "source": "https://github.com/qdrant/qdrant-client/pull/1515",
       "external_author": "adityaanikam",
@@ -107,7 +107,7 @@
       "upstream_merge_claimed": true,
       "our_followup_source": "https://github.com/qdrant/qdrant-client/pull/1515#issuecomment-5977970925",
       "followup_adoption_claimed": false,
-      "scope": "Our issue #1510 is explicitly linked by PR #1515, merged into the upstream dev branch. Original implementation and regression tests are by adityaanikam, with extensions by joein. Our subsequent SQLITE_BUSY review is linked, but our candidate patch is not claimed cherry-picked or explicitly credited by this merge.",
+      "scope": "Our issue #1510 is explicitly linked by PR #1515, merged into the upstream dev branch. Original implementation and regression tests are by adityaanikam, with extensions by joein. Our subsequent SQLITE_BUSY review is linked, but our candidate patch is not claimed cherry-picked or explicitly credited by this merge. The fix was released in v1.20.0 and confirmed by the maintainer on 23 October. A fresh six-scenario local-wheel comparison passed 2/6 for 1.19.1 and 6/6 for 1.20.0; not a full-suite or crash-durability claim.",
       "previous_public_status": {
         "edition_date": "2026-10-14",
         "outcome": "external_fix_pr_explicitly_links_reported_issue",
@@ -118,14 +118,21 @@
         "adityaanikam",
         "joein"
       ],
-      "release_claimed": false,
+      "release_claimed": true,
       "merge_commit": "ac865e8b65bcbe800a83b1dd01571aee02fcead3",
       "merge_target_branch": "dev",
       "merged_at_utc": "2026-10-13T12:49:45Z",
       "merged_by": "joein",
-      "checked_at_utc": "2026-10-18T23:54:40.976Z",
-      "checked_on": "2026-10-19",
-      "our_role": "original reproduction report plus subsequent real-SQLite transaction-boundary review and separately published candidate patch"
+      "checked_at_utc": "2026-10-23T11:14:24.981301+00:00",
+      "checked_on": "2026-10-23",
+      "our_role": "original reproduction report plus subsequent real-SQLite transaction-boundary review and separately published candidate patch",
+      "release_version": "1.20.0",
+      "release_published_at_utc": "2026-10-22T11:35:40Z",
+      "release_source": "https://github.com/qdrant/qdrant-client/releases/tag/v1.20.0",
+      "maintainer_resolution_source": "https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021",
+      "release_verification_source": "https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6363499667",
+      "release_verification_evidence": "https://github.com/YS-OH-CORE/second-paddle-notes/tree/1efa64152c4e495f724a973f5acca2df9112caa3/checks/20261023-release-followups",
+      "previous_checked_at_utc": "2026-10-18T23:54:40.976Z"
     },
     {
       "id": "11",
@@ -305,9 +312,36 @@
         "full_ci_pass_claimed": false
       },
       "scope": "Preserves JSON types in opt-in read post-processing fact identity, including numeric 42 versus string 42. It is not database deletion or a full retrieval-quality claim. Owner approval is recorded; the PR is open/unmerged and contribution sign-off/CI progress remain pending."
+    },
+    {
+      "id": "15",
+      "topic": "mem0-flat-list-delete-consumers",
+      "outcome": "author_branch_fix_after_concrete_review_with_fresh_regression_confirmation",
+      "source_date": "2026-10-22",
+      "source": "https://github.com/mem0ai/mem0/pull/7647#issuecomment-6347118756",
+      "external_author": "manish-9245",
+      "source_created_at_utc": "2026-10-22T17:34:00Z",
+      "source_date_kst": "2026-10-23",
+      "upstream_merge_claimed": false,
+      "release_claimed": false,
+      "pr_state_at_check": "open_draft",
+      "fix_commit": "465c701cf4322e7f60120207081ada213f829a59",
+      "our_role": "real-store integration matrix, missing-consumer diagnosis and unchanged-reviewer follow-up",
+      "prior_control_credit": "zhgao, PR #7662",
+      "verification_source": "https://github.com/mem0ai/mem0/pull/7647#issuecomment-6363500295",
+      "verification_evidence": "https://github.com/YS-OH-CORE/second-paddle-notes/tree/1efa64152c4e495f724a973f5acca2df9112caa3/checks/20261023-release-followups",
+      "verification_summary": {
+        "cases": 16,
+        "passed": 16,
+        "failed": 0,
+        "harness_errors": 0,
+        "harness_unchanged": true
+      },
+      "scope": "Native and LangChain Chroma; sync/async; four synthetic fixture states; real store/history reads. Not inference, ingestion, other stores, >1000 batches, entity cleanup or full-suite verification.",
+      "checked_on": "2026-10-23"
     }
   ],
-  "updated_on": "2026-10-19",
+  "updated_on": "2026-10-23",
   "featured_case_ids": [
     "11",
     "12",
@@ -321,7 +355,12 @@
     "11",
     "12",
     "13",
-    "14"
+    "14",
+    "15"
   ],
-  "edition_note": "Three selected collaborations added; the existing Qdrant case updated after its external fix merged into the upstream dev branch. Original case IDs and source dates remain stable."
+  "edition_note": "Case 15 added for an externally acknowledged author-branch fix; existing case 10 updated to released status. Same-topic follow-ups are not extra cases.",
+  "current_edition_new_verification_case_ids": [
+    "10",
+    "15"
+  ]
 }
