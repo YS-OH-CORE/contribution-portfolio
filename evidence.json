@@ -1,9 +1,20 @@
 {
-  "schema": "zero-youngseok-portfolio/1",
+  "schema": "zero-youngseok-portfolio/2",
   "published_on": "2026-10-06",
+  "index_updated_on": "2026-10-27",
   "signature": "Zero × Youngseok Oh",
-  "case_count": 15,
-  "count_unit": "selected collaboration cases, not comments, tests or upstream merges",
+  "case_count": 16,
+  "count_unit": "selected collaboration cases, not all activity, comments, tests, repositories or upstream merges",
+  "profile_entry": "https://github.com/YS-OH-CORE",
+  "canonical_index": "https://github.com/YS-OH-CORE/contribution-portfolio#전체-공개-사례",
+  "verification_scope": "This edition adds the public incorporation and merge evidence for case 16. Cases 01-15 retain their source-specific evidence dates and documented limits; this navigation refresh does not claim a fresh audit of every PR, code change or historical test.",
+  "preserved_detailed_evidence": {
+    "edition_date": "2026-10-23",
+    "case_count": 15,
+    "commit": "dbcbda5d4afd435d511e15391630b1a5ffe559a1",
+    "url": "https://github.com/YS-OH-CORE/contribution-portfolio/blob/dbcbda5d4afd435d511e15391630b1a5ffe559a1/evidence.json",
+    "scope": "Complete earlier machine-readable evidence, including reported tests, authorship, corrections and revision-specific limits; retained unchanged at this commit. Existing narrative cases 01-15 remain in CASES.ko.md."
+  },
   "cases": [
     {
       "id": "01",
@@ -11,6 +22,7 @@
       "outcome": "author_branch_patch_and_test_adoption",
       "source_date": "2026-09-12",
       "source": "https://github.com/NousResearch/hermes-agent/pull/22982#issuecomment-5643327201",
+      "detail": "CASES.ko.md#01",
       "external_author": "MestreY0d4-Uninter",
       "upstream_merge_claimed": false
     },
@@ -20,15 +32,17 @@
       "outcome": "verbatim_test_reuse_and_coauthor_credit",
       "source_date": "2026-09-28",
       "source": "https://github.com/NousResearch/hermes-agent/pull/121944#issuecomment-5863926910",
+      "detail": "CASES.ko.md#02",
       "external_author": "liuhao1024",
       "upstream_merge_claimed": false
     },
     {
       "id": "03",
       "topic": "langgraph-parent-command-compatibility",
-      "outcome": "proposal_author_design_correction_and_thanks",
+      "outcome": "proposal_author_design_correction",
       "source_date": "2026-10-04",
       "source": "https://github.com/langchain-ai/langgraph/issues/9072#issuecomment-5980134186",
+      "detail": "CASES.ko.md#03",
       "external_author": "impartshadow",
       "upstream_merge_claimed": false
     },
@@ -38,8 +52,9 @@
       "outcome": "public_report_credit",
       "source_date": "2026-09-24",
       "source": "https://github.com/vbcherepanov/total-agent-memory/commit/55d0ab0124ca4fca81479a5bcafa262aaaf0e19e",
+      "detail": "CASES.ko.md#04",
       "external_author": "vbcherepanov",
-      "scope": "saved verdicts and reporting, not full-system certification"
+      "scope": "Saved verdicts and reporting, not full-system certification."
     },
     {
       "id": "05",
@@ -47,6 +62,7 @@
       "outcome": "author_reported_failure_confirmation_and_fix",
       "source_date": "2026-10-01",
       "source": "https://github.com/NousResearch/hermes-agent/pull/130126#issuecomment-5932499656",
+      "detail": "CASES.ko.md#05",
       "external_author": "PiToTheOneHalvth",
       "external_ai_assistance_disclosed": true,
       "upstream_merge_claimed": false
@@ -57,12 +73,11 @@
       "outcome": "author_reported_regression_coverage_added",
       "source_date": "2026-10-01",
       "source": "https://github.com/NousResearch/hermes-agent/pull/107809#issuecomment-5931462372",
+      "secondary_source": "https://github.com/NousResearch/hermes-agent/issues/107807#issuecomment-5653710322",
+      "detail": "CASES.ko.md#06",
       "external_author": "KoNit-K",
       "upstream_merge_claimed": false,
-      "secondary_source": "https://github.com/NousResearch/hermes-agent/issues/107807#issuecomment-5653710322",
-      "secondary_external_author": "gaoanze888",
-      "secondary_outcome": "current_main_residual_boundary_reproduced_after_later_upstream_fix",
-      "secondary_scope": "Confirms a remaining exact-marker read_file boundary in the same problem family; it does not independently rerun every earlier JSON scalar/list case."
+      "scope": "The later residual-boundary reproduction is a distinct external observation in the same problem family, not a rerun of all earlier cases."
     },
     {
       "id": "07",
@@ -70,15 +85,19 @@
       "outcome": "participant_runtime_use_confirmation",
       "source_date": "2026-09-24",
       "source": "https://github.com/NousResearch/hermes-agent/issues/121970#issuecomment-5823143850",
+      "detail": "CASES.ko.md#07",
       "external_author": "ren2140eth",
       "upstream_merge_claimed": false
     },
     {
       "id": "08",
       "topic": "hermes-explicit-stop-classification",
-      "outcome": "narrow_branch_hardening_with_causal_correction",
+      "outcome": "branch_hardening_and_attributed_followup_implementation",
       "source_date": "2026-09-23",
       "source": "https://github.com/NousResearch/hermes-agent/pull/84236#issuecomment-5786674461",
+      "followup_source": "https://github.com/NousResearch/hermes-agent/pull/133858",
+      "followup_detail": "updates/2026-10-22-hermes-case-08.ko.md",
+      "detail": "CASES.ko.md#08",
       "external_author": "Halldrix",
       "broader_cli_explanation_corrected": true,
       "upstream_merge_claimed": false
@@ -86,281 +105,110 @@
     {
       "id": "09",
       "topic": "mem0-recency-pool-counterexample",
-      "outcome": "explicit_public_attribution_of_counterexample_in_design_comparison",
+      "outcome": "public_attribution_of_counterexample_in_design_comparison",
       "source_date": "2026-10-05",
       "source": "https://github.com/mem0ai/mem0/issues/7535#issuecomment-5992249148",
+      "detail": "CASES.ko.md#09",
       "external_author": "sattyamjjain",
       "code_adoption_claimed": false,
       "upstream_merge_claimed": false,
-      "external_tool_authorship_claimed": false,
-      "scope": "Our pinned-source counterexample was cited to compare an existing resolver; no causal claim that our work created that resolver."
+      "external_tool_authorship_claimed": false
     },
     {
       "id": "10",
       "topic": "qdrant-local-persistent-delete-retry",
       "outcome": "our_report_linked_to_external_merged_and_released_fix",
-      "source_date": "2026-09-30",
       "source": "https://github.com/qdrant/qdrant-client/pull/1515",
-      "external_author": "adityaanikam",
       "triggering_report": "https://github.com/qdrant/qdrant-client/issues/1510",
-      "pr_body_links_issue_as": "Fixes #1510",
-      "upstream_merge_claimed": true,
-      "our_followup_source": "https://github.com/qdrant/qdrant-client/pull/1515#issuecomment-5977970925",
-      "followup_adoption_claimed": false,
-      "scope": "Our issue #1510 is explicitly linked by PR #1515, merged into the upstream dev branch. Original implementation and regression tests are by adityaanikam, with extensions by joein. Our subsequent SQLITE_BUSY review is linked, but our candidate patch is not claimed cherry-picked or explicitly credited by this merge. The fix was released in v1.20.0 and confirmed by the maintainer on 23 October. A fresh six-scenario local-wheel comparison passed 2/6 for 1.19.1 and 6/6 for 1.20.0; not a full-suite or crash-durability claim.",
-      "previous_public_status": {
-        "edition_date": "2026-10-14",
-        "outcome": "external_fix_pr_explicitly_links_reported_issue",
-        "upstream_merge_claimed": false,
-        "scope": "Counts the external issue-to-fix-PR outcome. The external contributor owns PR #1515 implementation and regression test; our later transaction-boundary candidate is separate and not claimed adopted."
-      },
-      "external_implementation_authors": [
-        "adityaanikam",
-        "joein"
-      ],
-      "release_claimed": true,
-      "merge_commit": "ac865e8b65bcbe800a83b1dd01571aee02fcead3",
-      "merge_target_branch": "dev",
-      "merged_at_utc": "2026-10-13T12:49:45Z",
-      "merged_by": "joein",
-      "checked_at_utc": "2026-10-23T11:14:24.981301+00:00",
-      "checked_on": "2026-10-23",
-      "our_role": "original reproduction report plus subsequent real-SQLite transaction-boundary review and separately published candidate patch",
-      "release_version": "1.20.0",
-      "release_published_at_utc": "2026-10-22T11:35:40Z",
-      "release_source": "https://github.com/qdrant/qdrant-client/releases/tag/v1.20.0",
       "maintainer_resolution_source": "https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021",
-      "release_verification_source": "https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6363499667",
-      "release_verification_evidence": "https://github.com/YS-OH-CORE/second-paddle-notes/tree/1efa64152c4e495f724a973f5acca2df9112caa3/checks/20261023-release-followups",
-      "previous_checked_at_utc": "2026-10-18T23:54:40.976Z"
+      "release_source": "https://github.com/qdrant/qdrant-client/releases/tag/v1.20.0",
+      "detail": "CASES.ko.md#10",
+      "followup_detail": "updates/2026-10-23-qdrant-mem0.ko.md",
+      "external_implementation_authors": ["adityaanikam", "joein"],
+      "upstream_merge_claimed": true,
+      "release_claimed": true,
+      "release_version": "1.20.0",
+      "checked_on": "2026-10-23",
+      "scope": "Our report and subsequent review are distinct from the external authors' implementation. Historical wheel tests are not new runs in this edition."
     },
     {
       "id": "11",
       "topic": "canitoolcall-verifier-report-integrity",
-      "outcome": "maintainer_reported_reproduction_and_upstream_merged_fix",
-      "source_date": "2026-10-14",
-      "source_date_timezone": "Asia/Seoul",
+      "outcome": "maintainer_reproduction_and_our_authored_pr_merged",
       "source": "https://github.com/redd34/canitoolcall/pull/31#pullrequestreview-5508476450",
-      "external_author": "redd34",
-      "external_role": "maintainer reviewing and merging the contribution",
-      "triggering_report": "https://github.com/redd34/canitoolcall/issues/30",
       "pull_request": "https://github.com/redd34/canitoolcall/pull/31",
-      "contributor_account": "YS-OH-CORE",
-      "reviewed_head": "188ad967b989544cf356979a05c5feaf5da0b616",
-      "merge_commit": "03d9149b2d6590576b92307b1260aefb198d2342",
-      "merged_at_utc": "2026-10-13T18:55:07Z",
+      "detail": "CASES.ko.md#11",
+      "external_author": "redd34",
       "upstream_merge_claimed": true,
       "release_claimed": false,
-      "checked_on": "2026-10-19",
-      "reported_tests": {
-        "source": "maintainer review, not a new run during publication",
-        "environment": "macOS / Python 3.12",
-        "focused_passed": 54,
-        "original_with_new_tests_failed": 47,
-        "original_with_new_tests_passed": 7,
-        "full_suite_passed": 526,
-        "engine_dependent_skips": 367,
-        "focused_included_in_full_suite": true
-      },
-      "scope": "One report-integrity collaboration from issue #30 to merged PR #31. Synthetic report fault injection, not 54 engine defects. No new execution, release validation, or acceptance claim for PR #33 or issue #9.",
-      "checked_at_utc": "2026-10-18T23:54:41.313Z",
-      "merge_target_branch": "main"
+      "checked_on": "2026-10-19"
     },
     {
       "id": "12",
       "topic": "canitoolcall-compiled-engine-verifier",
-      "outcome": "externally_reproduced_regression_and_current_head_approved_implementation",
-      "added_on": "2026-10-19",
-      "source_date": "2026-10-16",
+      "outcome": "externally_reproduced_regression_and_review_approval",
       "source": "https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5543659056",
-      "external_author": "redd34",
+      "external_finding_reproduction": "https://github.com/redd34/canitoolcall/issues/37",
       "pull_request": "https://github.com/redd34/canitoolcall/pull/33",
-      "contributor_account": "YS-OH-CORE",
-      "state": "open",
-      "draft": false,
-      "reviewed_head": "fc4033631e03c598a6c7e6f4628dc80916220597",
-      "target_branch": "main",
+      "detail": "CASES.ko.md#12",
+      "external_author": "redd34",
       "upstream_merge_claimed": false,
-      "merge_commit": null,
-      "merged_at_utc": null,
-      "release_claimed": false,
       "checked_on": "2026-10-19",
-      "checked_at_utc": "2026-10-18T23:54:41.228Z",
-      "current_head_approval": [
-        {
-          "id": 5543659056,
-          "url": "https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5543659056",
-          "author": "redd34",
-          "association": "OWNER",
-          "state": "APPROVED",
-          "commit_id": "fc4033631e03c598a6c7e6f4628dc80916220597",
-          "submitted_at": "2026-10-16T06:01:44Z"
-        }
-      ],
-      "our_role": "Zero가 구현·회귀검사·실제 과거 Ollama/llama.cpp 비교 및 리뷰 수정을 수행했고 Youngseok Oh가 방향을 제시했다.",
-      "attribution": "Youngseok Oh supplies questions, direction and corrections; Zero performs the described AI analysis, implementation, execution and writing. Original project work and recipient reruns remain with their authors.",
-      "initial_review": "https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5508451108",
-      "external_finding_reproduction": {
-        "source": "https://github.com/redd34/canitoolcall/issues/37",
-        "author": "redd34",
-        "reported_reproduction_date": "2026-10-14",
-        "our_account_explicitly_credited": true,
-        "scope": "The maintainer reports a separate build reproducing the Ollama #18663 regression found with our verifier: two improved cases and one formerly recoverable malformed input now failing. The parser repair proposed there is the maintainer's work."
-      },
-      "reported_tests": {
-        "source": "maintainer current-head review",
-        "environment": "macOS / Python 3.12",
-        "compiled_tests_passed": 93,
-        "full_suite_passed": 622,
-        "engine_dependent_skips": 367,
-        "focused_included_in_full_suite": true,
-        "real_engine_build_at_reviewed_head": false
-      },
-      "earlier_engine_run_verifier_head": "32adbbe96ca22185832f204050ccb5b860d0d960",
-      "scope": "One implemented verifier, its detected regression and reviewer-requested corrections. Approved/open/unmerged. The original engine executions and the separately reproduced finding are distinct from current-head verifier tests. Environment and process separation are not a security sandbox."
+      "scope": "Approved implementation and separately reproduced finding. Original engine executions are not fresh builds of every later revision."
     },
     {
       "id": "13",
       "topic": "canitoolcall-recovery-discrepancy-triage",
-      "outcome": "maintainer_replay_and_upstream_merged_triage_contribution",
-      "added_on": "2026-10-19",
-      "source_date": "2026-09-27",
+      "outcome": "maintainer_replay_and_our_authored_pr_merged",
       "source": "https://github.com/redd34/canitoolcall/pull/13#pullrequestreview-5330173478",
-      "external_author": "redd34",
       "pull_request": "https://github.com/redd34/canitoolcall/pull/13",
-      "contributor_account": "YS-OH-CORE",
-      "state": "closed",
-      "draft": false,
-      "reviewed_head": "7f6242c267175a7fda9659ccf40f3c0248c886e3",
-      "target_branch": "main",
+      "detail": "CASES.ko.md#13",
+      "external_author": "redd34",
       "upstream_merge_claimed": true,
-      "merge_commit": "9a83ac59b175342586f220ae313e606d706ea6f3",
-      "merged_at_utc": "2026-10-13T18:47:12Z",
       "release_claimed": false,
-      "checked_on": "2026-10-19",
-      "checked_at_utc": "2026-10-18T23:54:41.034Z",
-      "current_head_approval": [
-        {
-          "id": 5330173478,
-          "url": "https://github.com/redd34/canitoolcall/pull/13#pullrequestreview-5330173478",
-          "author": "redd34",
-          "association": "OWNER",
-          "state": "APPROVED",
-          "commit_id": "7f6242c267175a7fda9659ccf40f3c0248c886e3",
-          "submitted_at": "2026-09-27T11:51:07Z"
-        }
-      ],
-      "our_role": "Zero가 9개 vLLM recovery discrepancy를 triage하고 생성기·설명 기록을 수정했다. 원래 엔진·fixture·기대값·점수 archive의 저작과 결과를 바꾸지 않았다.",
-      "attribution": "Youngseok Oh supplies questions, direction and corrections; Zero performs the described AI analysis, implementation, execution and writing. Original project work and recipient reruns remain with their authors.",
-      "initial_review": "https://github.com/redd34/canitoolcall/pull/13#pullrequestreview-5325619945",
-      "reported_replay": {
-        "source": "maintainer reviews",
-        "engine": "vLLM 0.30.0",
-        "initial_cases_replayed": 8,
-        "initial_remaining_case": "snapshot checked; replay blocked by tokenizer cache",
-        "final_selected_cases_replayed": 2,
-        "initial_and_final_may_overlap": true,
-        "triage_output_regeneration_byte_equal_reported": true
-      },
-      "scope": "Nine discrepancy classifications and explanations in CanIToolCall, not nine repaired engine bugs or a vLLM merge. The unresolved newline-recovery contract stays unclassified. Original engine, fixtures and expectations retain their authorship."
+      "checked_on": "2026-10-19"
     },
     {
       "id": "14",
-      "topic": "mnemo-json-type-fact-identity",
-      "outcome": "owner_requested_fix_reported_tests_and_current_head_approval",
-      "added_on": "2026-10-19",
-      "source_date": "2026-10-10",
+      "topic": "mnemo-json-fact-identity",
+      "outcome": "owner_reported_tests_and_review_approval",
       "source": "https://github.com/sattyamjjain/mnemo/pull/204#issuecomment-6096480334",
-      "external_author": "sattyamjjain",
       "pull_request": "https://github.com/sattyamjjain/mnemo/pull/204",
-      "contributor_account": "YS-OH-CORE",
-      "state": "open",
-      "draft": false,
-      "reviewed_head": "8d3c06a4571eca50641001d3639256b71f756e80",
-      "target_branch": "main",
+      "detail": "CASES.ko.md#14",
+      "external_author": "sattyamjjain",
       "upstream_merge_claimed": false,
-      "merge_commit": null,
-      "merged_at_utc": null,
-      "release_claimed": false,
-      "checked_on": "2026-10-19",
-      "checked_at_utc": "2026-10-18T23:54:41.368Z",
-      "current_head_approval": [
-        {
-          "id": 5478621062,
-          "url": "https://github.com/sattyamjjain/mnemo/pull/204#pullrequestreview-5478621062",
-          "author": "sattyamjjain",
-          "association": "OWNER",
-          "state": "APPROVED",
-          "commit_id": "8d3c06a4571eca50641001d3639256b71f756e80",
-          "submitted_at": "2026-10-10T10:29:20Z"
-        }
-      ],
-      "our_role": "Zero가 JSON 타입 충돌 반례·후보 구현·native Rust 모듈 검증·요청된 다섯 검사 통합을 수행했다. 원래 resolver는 Mnemo 기여자의 작업이다.",
-      "attribution": "Youngseok Oh supplies questions, direction and corrections; Zero performs the described AI analysis, implementation, execution and writing. Original project work and recipient reruns remain with their authors.",
-      "triggering_report": "https://github.com/sattyamjjain/mnemo/issues/203",
-      "owner_bug_confirmation_and_request": "https://github.com/sattyamjjain/mnemo/issues/203#issuecomment-6074639579",
-      "reported_tests": {
-        "source": "owner comment",
-        "resolver_tests_passed": 11,
-        "proposed_tests_included": 5,
-        "full_project_build_or_ci_success_claimed": false
-      },
-      "remaining_conditions": {
-        "dco_signoff_present": false,
-        "workflow_runs_requiring_action": 5,
-        "workflow_conclusion": "action_required",
-        "full_ci_pass_claimed": false
-      },
-      "scope": "Preserves JSON types in opt-in read post-processing fact identity, including numeric 42 versus string 42. It is not database deletion or a full retrieval-quality claim. Owner approval is recorded; the PR is open/unmerged and contribution sign-off/CI progress remain pending."
+      "scope": "Approval and reported tests are distinct from sign-off, CI execution, upstream merge and release."
     },
     {
       "id": "15",
-      "topic": "mem0-flat-list-delete-consumers",
-      "outcome": "author_branch_fix_after_concrete_review_with_fresh_regression_confirmation",
-      "source_date": "2026-10-22",
+      "topic": "mem0-deletion-consumer-list-regression",
+      "outcome": "author_branch_consumer_fixes_and_regression_coverage",
       "source": "https://github.com/mem0ai/mem0/pull/7647#issuecomment-6347118756",
-      "external_author": "manish-9245",
-      "source_created_at_utc": "2026-10-22T17:34:00Z",
-      "source_date_kst": "2026-10-23",
+      "detail": "CASES.ko.md#15",
+      "followup_detail": "updates/2026-10-23-qdrant-mem0.ko.md",
+      "checked_on": "2026-10-23",
       "upstream_merge_claimed": false,
+      "scope": "Author-branch response to our comparison matrix, not upstream maintainer acceptance or release."
+    },
+    {
+      "id": "16",
+      "topic": "hermes-config-read-failure-diagnostics",
+      "outcome": "authored_work_incorporated_through_maintainer_merged_integration_pr",
+      "added_on": "2026-10-27",
+      "checked_on": "2026-10-27",
+      "source": "https://github.com/NousResearch/hermes-agent/pull/144257",
+      "original_pull_request": "https://github.com/NousResearch/hermes-agent/pull/125960",
+      "original_pr_author": "YS-OH-CORE",
+      "original_pr_merged": false,
+      "original_pr_state": "closed",
+      "integration_author": "teknium1",
+      "integration_pr_merged": true,
+      "integration_target_branch": "main",
+      "integration_merged_at_utc": "2026-10-25T10:01:27Z",
+      "integration_merge_commit": "1d258cc6c23b2d6db1ed63f551cf9267d6d471ac",
+      "detail": "cases/16-hermes-config-warning.ko.md",
       "release_claimed": false,
-      "pr_state_at_check": "open_draft",
-      "fix_commit": "465c701cf4322e7f60120207081ada213f829a59",
-      "our_role": "real-store integration matrix, missing-consumer diagnosis and unchanged-reviewer follow-up",
-      "prior_control_credit": "zhgao, PR #7662",
-      "verification_source": "https://github.com/mem0ai/mem0/pull/7647#issuecomment-6363500295",
-      "verification_evidence": "https://github.com/YS-OH-CORE/second-paddle-notes/tree/1efa64152c4e495f724a973f5acca2df9112caa3/checks/20261023-release-followups",
-      "verification_summary": {
-        "cases": 16,
-        "passed": 16,
-        "failed": 0,
-        "harness_errors": 0,
-        "harness_unchanged": true
-      },
-      "scope": "Native and LangChain Chroma; sync/async; four synthetic fixture states; real store/history reads. Not inference, ingestion, other stores, >1000 batches, entity cleanup or full-suite verification.",
-      "checked_on": "2026-10-23"
+      "scope": "Integration PR explicitly names our configuration-warning work and says original commit authorship was retained. We do not claim direct merge of #125960, authorship of the whole integration, a release, or a fresh test of the merged tree."
     }
-  ],
-  "updated_on": "2026-10-23",
-  "featured_case_ids": [
-    "11",
-    "12",
-    "10",
-    "01",
-    "02",
-    "04"
-  ],
-  "current_state_checked_case_ids": [
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15"
-  ],
-  "edition_note": "Case 15 added for an externally acknowledged author-branch fix; existing case 10 updated to released status. Same-topic follow-ups are not extra cases.",
-  "current_edition_new_verification_case_ids": [
-    "10",
-    "15"
   ]
 }
