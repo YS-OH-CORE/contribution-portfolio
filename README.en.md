@@ -1,92 +1,61 @@
+<div align="center">
+
 # Changes we helped make
-## Zero × Youngseok Oh
+### Zero × Youngseok Oh
 
-**Find the failure. Make it reproducible. Help someone make a better change.**
+**A continuing conversation, with work others can inspect and use.**
 
-[한국어](README.md) · [All 15 cases](CASES.ko.md) · [Public source index](evidence.json) · [Support the work](https://ko-fi.com/ysohcore)
+[Profile](https://github.com/YS-OH-CORE) · [한국어 / all 16 cases](README.md#전체-공개-사례) · [Source index](evidence.json) · [Research workroom](https://github.com/YS-OH-CORE/second-paddle-notes)
 
-## 23 October update
-
-Qdrant case 10 now has release evidence and a six-scenario wheel comparison. New case 15 records a Mem0 author applying our deletion-consumer feedback, followed by an unchanged 16-case rerun. The collection now contains **15 selected cases**, not 15 merged PRs. [Dated sources and limits](updates/2026-10-23-qdrant-mem0.ko.md).
-
-## Fifteen selected contributions
-
-Merged fixes, findings another developer reproduced, tests reused with credit, and reviews that changed a design. Each case connects a concrete problem to our contribution and the recipient's recorded response.
-
-The collection includes different outcomes: a merged change, a patch adopted on an author's branch, an approved contribution awaiting merge, or explicitly credited analysis. Each is labeled where it appears.
-
-## Start with these six
-
-### 11 · Stop incomplete comparisons from reporting success
-
-**CanIToolCall · Our fix merged into main**
-
-A before-and-after comparison could report success even when its results were missing, duplicated, or otherwise incomplete. We reported the failure and supplied report validation with 54 regression and control cases. Maintainer **redd34** reported reproducing the original failures and rerunning the corrected tests, then approved and merged PR #31 on 14 October KST.
-
-[Read the case](CASES.ko.md#11) · [Maintainer's verification](https://github.com/redd34/canitoolcall/pull/31#pullrequestreview-5508476450) · [Merged PR](https://github.com/redd34/canitoolcall/pull/31)
-
-### 12 · Catch a regression hidden beside two improvements
-
-**CanIToolCall · Finding reproduced by the owner; verifier approved, awaiting merge**
-
-We built a verifier that separately builds and compares the original and proposed revisions of Ollama and llama.cpp. An actual Ollama comparison found two improvements alongside a new parser regression. **redd34** reproduced the finding with a separate build and credited our work, then approved the verifier after four requested corrections. The approved revision remains unmerged; the actual engine runs belong to the earlier revision, not a fresh engine rebuild of the approved code.
-
-[Read the case](CASES.ko.md#12) · [Owner's separate reproduction and credit](https://github.com/redd34/canitoolcall/issues/37) · [Approval after corrections](https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5543659056)
-
-### 10 · Make a failed deletion recoverable on retry
-
-**Qdrant · Our report linked to an external fix released in v1.20.0**
-
-We reproduced a persistent local deletion failure that hid unreached points from a same-filter retry. adityaanikam and joein implemented and integrated the fix. The maintainer confirmed the released fix on 23 October. Our fresh six-scenario comparison reproduces four failures in 1.19.1 and passes all six in 1.20.0, including retry and reopened-state checks. The implementation remains theirs.
-
-[Read the case](CASES.ko.md#10) · [Maintainer confirmation](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021) · [Release verification](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6363499667)
-
-### 01 · Keep an approval attached to the request that triggered it
-
-**Hermes Agent · Patch and tests adopted on the author's branch**
-
-A pending model-switch approval needed to stay connected to its original request as later interactions arrived. We supplied a reproduction, a request-binding patch, and regression tests. Feature author **MestreY0d4-Uninter** reported applying the two files verbatim, checking their contents, and running the related tests. The original feature and its integration remain the author's work.
-
-[Read the case](CASES.ko.md#01) · [Author's adoption report](https://github.com/NousResearch/hermes-agent/pull/22982#issuecomment-5643327201)
-
-### 02 · Tell a temporary connection failure from a rejected protocol
-
-**Hermes Agent · Real-connection tests reused verbatim, with coauthorship**
-
-A temporary server error needs a different recovery path from a genuine rejection of the communication protocol. We supplied tests using a real local HTTP server to distinguish those conditions across code revisions. **liuhao1024** reused our test commit unchanged, retained coauthorship, and reported all 43 related checks passing. The recovery implementation itself is liuhao1024's contribution.
-
-[Read the case](CASES.ko.md#02) · [Test reuse and rerun report](https://github.com/NousResearch/hermes-agent/pull/121944#issuecomment-5863926910)
-
-### 04 · Check what an evaluation result actually supports
-
-**Total Agent Memory · Named contribution in the published report**
-
-We checked saved evaluation verdicts and the conclusions drawn from them: six LongMemEval accuracy values and four paired comparisons. Project author **vbcherepanov** added credit naming Youngseok Oh and Zero's substantial technical analysis, code, and execution assistance. The original benchmark research belongs to its author; our review covered the saved results and their reporting.
-
-[Read the case](CASES.ko.md#04) · [Published credit](https://github.com/vbcherepanov/total-agent-memory/commit/55d0ab0124ca4fca81479a5bcafa262aaaf0e19e)
-
-## Nine more collaborations
-
-| Case | What we contributed | Confirmed outcome |
-|---|---|---|
-| [15 · Find consumers missed by a flat-list change](CASES.ko.md#15) | A real-store 16-case matrix covering sync and async deletion | The author fixed both consumers and added regression tests. Exact revised head passed all 16 unchanged cases. **Author branch, not merged.** |
-| [13 · Distinguish the causes behind similar failures](CASES.ko.md#13) | Replay-based analysis and clearer classification of nine parser-recovery discrepancies | The CanIToolCall owner replayed selected cases, approved the explanations, and merged the triage changes in #13. The changes are in CanIToolCall's triage and reporting files. |
-| [14 · Keep numeric `42` and string `"42"` as different facts](CASES.ko.md#14) | A reproduction, type-preserving fix, and regression tests for mnemo's read-side fact resolver | The owner confirmed the bug, reported all 11 resolver tests passing, and approved #204. It remains unmerged, with DCO sign-off and CI execution pending. |
-| [03 · Catch a compatibility regression before implementation](CASES.ko.md#03) | Showed why an existing nested-task exclusion must precede LangGraph's proposed command classification | The proposal author corrected the public design and acknowledged the review. |
-| [05 · Prevent a late response from overriding a newer choice](CASES.ko.md#05) | Distinguished a superseded restore request from a screen whose lifetime had ended | The Hermes feature author confirmed both failures and reported fixing them; the response disclosed AI assistance. |
-| [06 · Preserve normal data that quotes an interruption marker](CASES.ko.md#06) | Identified valid JSON strings and lists that could be mistaken for an interrupted command | The Hermes PR author added regression coverage. A later contributor also documented a separate remaining boundary in file content. |
-| [07 · Separate personal Signal notes from group messages](CASES.ko.md#07) | Proposed a narrow opt-out while preserving group synchronization and existing defaults | A participant implemented it on a linked secondary device and reported the expected behavior. |
-| [08 · Distinguish an explicit stop from a redirect](CASES.ko.md#08) | Reviewed a Hermes classification boundary and its regression cases | The author strengthened the branch and used a command-line experiment to correct our broader causal explanation. Both results are preserved. |
-| [09 · Show how an unseen candidate can reverse search results](CASES.ko.md#09) | Reproduced a ranking reversal caused by an old candidate absent from the final results | Another memory-tool author explicitly cited our counterexample when comparing their existing design. The resolver implementation is theirs. |
-
-## Who contributed what
-
-**Youngseok Oh supplies questions, direction, and corrections. Zero is the AI collaborator performing substantial analysis, implementation, execution, and writing.** Original feature work, integration, and reported reruns remain attributed to the external contributors. Some of their work is also AI-assisted, as recorded in the detailed cases.
-
-The linked records preserve source dates, code revisions, and the scope of each outcome. Reported test counts belong to those recorded executions. An approval or branch adoption is labeled separately from a merge, and a merge does not establish a release or deployment.
-
-[Publication criteria](PUBLICATION.md) · [Technical workbench](https://github.com/YS-OH-CORE/second-paddle-notes) · [Ko-fi](https://ko-fi.com/ysohcore)
+</div>
 
 ---
 
-First published **6 October 2026** · **15 selected cases as of 23 October 2026 KST** · Case 15 added; case 10 now includes release evidence. The earlier 19 October edition added cases 12–14. Earlier contributions retain their original evidence and dates.
+Youngseok Oh and Zero, his AI collaboration partner, explore memory, continuity, human–AI interaction and useful technical work. This portfolio follows a simple path: **a concrete problem → our contribution → an externally recorded outcome**.
+
+The [profile](https://github.com/YS-OH-CORE) is our shared front door and complete selected-case index. This repository holds the explanations and source links. [The Second Paddle Notes](https://github.com/YS-OH-CORE/second-paddle-notes) holds research questions, code and a broader dated work trail. These are different views of related work, not achievements to add together.
+
+## Start with three cases
+
+**16 · Hermes: make configuration-read failures visible.** Our authored change kept existing fallback behavior while reporting the failed reader without exposing private configuration values. Maintainer teknium1 explicitly incorporated our work with original commit authorship in integration PR #144257, merged on 25 October 2026. The original #125960 was closed without a direct merge. [Scope and sources](cases/16-hermes-config-warning.ko.md#english-summary) · [Merged integration](https://github.com/NousResearch/hermes-agent/pull/144257).
+
+**11 · CanIToolCall: stop incomplete comparison reports from claiming success.** We supplied a report-validation fix and regression tests. The maintainer reproduced the failures, reviewed the correction and merged our PR #31. [Detailed case](CASES.ko.md#11) · [Maintainer verification](https://github.com/redd34/canitoolcall/pull/31#pullrequestreview-5508476450).
+
+**10 · Qdrant: make a failed deletion retryable.** Our reproduction report was explicitly connected to an external fix implemented by adityaanikam and joein. The maintainer confirmed the fix in v1.20.0. The implementation remains theirs. [Detailed case](CASES.ko.md#10) · [Release confirmation](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021).
+
+## All 16 selected collaboration cases
+
+| ID | Contribution | Documented outcome |
+| :--- | :--- | :--- |
+| [01 · Hermes](CASES.ko.md#01) | Bind approval to its originating request | Patch and tests adopted on the feature author's branch |
+| [02 · Hermes](CASES.ko.md#02) | Test recovery through real HTTP connections | Tests reused verbatim with coauthor credit |
+| [03 · LangGraph](CASES.ko.md#03) | Preserve nested-task compatibility | Proposal author corrected the design |
+| [04 · Total Agent Memory](CASES.ko.md#04) | Review saved evaluation verdicts and reporting | Named contribution in a public report |
+| [05 · Hermes](CASES.ko.md#05) | Distinguish stale restoration from ended screen lifetime | Author confirmed the failures and reported a fix; AI assistance disclosed |
+| [06 · Hermes](CASES.ko.md#06) | Preserve valid JSON quoting an interruption marker | Author added regression coverage |
+| [07 · Hermes / Signal](CASES.ko.md#07) | Separate personal notes from group synchronization | Participant implemented and reported device use |
+| [08 · Hermes](CASES.ko.md#08) | Clarify interrupted CLI execution | Attributed follow-up implementation; causal correction retained |
+| [09 · Mem0](CASES.ko.md#09) | Expose a recency-ranking counterexample | Public attribution in another tool's design comparison |
+| [10 · Qdrant](CASES.ko.md#10) | Reproduce persistent deletion and retry failure | Report-linked external fix released in v1.20.0 |
+| [11 · CanIToolCall](CASES.ko.md#11) | Reject incomplete verification reports | Our authored PR #31 merged |
+| [12 · CanIToolCall](CASES.ko.md#12) | Build an engine-comparison verifier and detect a regression | Maintainer separately reproduced the finding; implementation review approved |
+| [13 · CanIToolCall](CASES.ko.md#13) | Classify parser-recovery failures | Our authored PR #13 merged |
+| [14 · mnemo](CASES.ko.md#14) | Preserve JSON types in fact identity | Owner reported passing tests and review approval |
+| [15 · Mem0](CASES.ko.md#15) | Find deletion consumers missed by a list-format change | Author-branch fixes and regression coverage |
+| [16 · Hermes](cases/16-hermes-config-warning.ko.md) | Report configuration-read failures without private values | Our work included in merged maintainer integration PR #144257 |
+
+**Sixteen is a count of selected collaboration cases, not merged PRs, customers, repositories, comments or all public activity.** Branch adoption, local use, approval, merge and release are different outcomes. Follow-ups stay with their original case. See the linked case for source dates, original authors and limits.
+
+The 27 October edition newly verifies the incorporation and merge evidence for case 16. Cases 01–15 retain their source-specific historical evidence. This editorial update does not rerun their tests or present every PR as freshly re-audited. For wider activity, including proposals not selected here, use the [dated public work trail](https://github.com/YS-OH-CORE/second-paddle-notes/blob/main/WORK.md).
+
+## Who contributed what
+
+Youngseok supplies original questions, direction, judgment and corrections. Zero contributes substantial AI-assisted analysis, implementation, experiments and writing. External implementation, integration and reported reruns retain their authorship. We do not describe AI-assisted work as Youngseok personally writing and executing every line, or recipient feedback as institutional endorsement.
+
+[Publication criteria](PUBLICATION.md) · [Collaboration](https://github.com/YS-OH-CORE/second-paddle-notes/blob/main/COLLABORATE.md) · [Optional support](https://ko-fi.com/ysohcore)
+
+## Earlier editions
+
+[23 October follow-through](updates/2026-10-23-qdrant-mem0.ko.md) · [22 October follow-through](updates/2026-10-22-hermes-case-08.ko.md) · [Previous English overview](https://github.com/YS-OH-CORE/contribution-portfolio/blob/dbcbda5d4afd435d511e15391630b1a5ffe559a1/README.en.md) · [Preserved detailed evidence](https://github.com/YS-OH-CORE/contribution-portfolio/blob/dbcbda5d4afd435d511e15391630b1a5ffe559a1/evidence.json)
+
+First published 6 October 2026 · Navigation updated 27 October 2026 KST · **16 selected public cases**. Private conversations and operational records remain outside this public collection.
