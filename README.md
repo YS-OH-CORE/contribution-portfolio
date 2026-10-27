@@ -2,94 +2,80 @@
 
 # 함께 만든 변화
 ### Zero × Youngseok Oh
-**문제를 찾고, 재현하고, 다른 사람의 작업에 도움이 된 기록.**
 
-[English](README.en.md) · [15개 사례 자세히 보기](CASES.ko.md) · [공개 근거 목록](evidence.json) · [활동 후원](https://ko-fi.com/ysohcore)
+**질문을 주고받다가, 다른 사람에게도 쓸모 있는 변화가 남았습니다.**
+
+[영석과 제로의 메인](https://github.com/YS-OH-CORE) · [English](README.en.md) · [전체 16개 사례](#전체-공개-사례) · [공개 근거 색인](evidence.json)
 
 </div>
 
 ---
 
-## 2026-10-23 후속 · 사례 10 갱신 + 새 사례 15
+이곳은 영석과 AI 협업 파트너 제로가 **문제를 찾고, 재현하고, 다른 사람의 작업에 보탠 기록**입니다. 단순한 제출이나 우리끼리의 평가는 성과로 세지 않습니다. 작성자의 반영, 실제 사용 보고, 검토 승인, 병합, 기여 표기처럼 공개 원문에서 확인할 수 있는 결과를 연결합니다.
 
-**우리 Qdrant 신고에 연결된 수정은 v1.20.0 정식 배포판에 반영됐고, Mem0 작성자는 우리 비교표를 받아 두 삭제 경로를 고쳤습니다.** 실제 배포판 6개 시나리오와 수정판의 기존 16개 사례를 재검증해 개발자들에게 전달했습니다. [새 소식·근거·기여 구분](updates/2026-10-23-qdrant-mem0.ko.md). 현재 공개 모음은 **15개 선별 사례**이며 아래 날짜별 기록은 당시 상태입니다.
+**처음 오셨다면:** 아래 세 사례를 먼저 읽고, 궁금한 항목의 상세 설명과 원문으로 이어가세요. 우리 소개와 전체 목차는 [GitHub 프로필 메인](https://github.com/YS-OH-CORE)에, 실험 코드와 연구 원자료는 [The Second Paddle Notes](https://github.com/YS-OH-CORE/second-paddle-notes)에 있습니다. 서로 다른 업적을 중복해서 세는 세 개의 목록이 아닙니다.
 
-## 2026-10-22 후속 · 사례 08
+## 먼저 볼 세 가지
 
-**Hermes 작성자가 우리의 명령줄 중단 안내 실험을 후속 수정안에 사용했다고 명시했습니다.** [기여 표기·확인 판본·남은 범위](updates/2026-10-22-hermes-case-08.ko.md)를 기존 사례 08에 연결했습니다. 상대 수정안은 확인 시점에 초안·미병합이며, 같은 협업의 후속이므로 **당시 14개 사례 수는 그대로**였습니다. 기존 원인 설명의 교정과 다른 작성자의 공로도 보존했습니다.
+### 16 · 실패했는데 조용히 넘어가지 않도록
 
-## 공개 원문으로 확인하는 15가지 기여
+**Hermes · 우리 수정이 관리자 통합 PR에 포함되어 병합**
 
-실제로 반영된 수정, 다른 개발자가 재현한 발견, 보고서에 이름이 남은 검토를 모았습니다. 각 사례에서 **어떤 문제가 있었고, 우리가 무엇을 보탰으며, 상대가 무엇을 확인했는지**를 볼 수 있습니다. 아래 여섯 사례부터 읽으면 서로 다른 기여 방식을 빠르게 살펴볼 수 있습니다.
+설정 읽기가 실패하면 사용자가 고른 기억·추론 설정이 적용되지 않을 수 있습니다. 기존 대체 동작은 유지하되, 개인 설정값을 노출하지 않고 실패한 지점을 알리는 수정과 검사를 제공했습니다. 관리자는 우리 PR을 원래 작성자 표시와 함께 가져왔다고 명시했고, 통합 PR은 main에 병합됐습니다. 원래 우리 PR 자체의 직접 병합과는 구별합니다.
 
-**2026-10-19 갱신:** 검증기 구현·오류 분류·기억 식별 수정의 세 사례를 추가하고, Qdrant 상위 저장소의 개발 브랜치 병합을 반영했습니다. 여러 답변과 후속 검토는 같은 작업에 묶었습니다. 14는 선별한 협업 사례 수이며, 병합·승인·브랜치 반영·기여 표기는 각기 표시합니다.
+[사례와 정확한 기여 범위](cases/16-hermes-config-warning.ko.md) · [관리자 통합·병합 기록](https://github.com/NousResearch/hermes-agent/pull/144257)
 
-## 먼저 볼 대표 사례
+### 11 · 검사 결과가 빠졌는데도 ‘정상’이 되는 오류
 
-### 11 · 검사 자료가 빠졌는데도 ‘정상’으로 보이던 오류
+**CanIToolCall · 운영자 재현·승인, 우리 수정 병합**
 
-**CanIToolCall · 운영자 재현·승인 → 본체 병합**  
-수정 전후를 비교하는 보고서에서 검사 항목이 빠지거나 중복돼도 성공으로 처리되던 문제를 고쳤습니다. 운영자는 새 검사에서 원본이 47개 실패하고 수정본은 54개 모두 통과함을 확인한 뒤 변경을 병합했습니다.  
-[사례 읽기](CASES.ko.md#11) · [운영자의 전후 대조](https://github.com/redd34/canitoolcall/pull/31#pullrequestreview-5508476450) · [병합된 수정](https://github.com/redd34/canitoolcall/pull/31)
+수정 전후 비교 보고서에 결과가 빠지거나 중복돼도 성공으로 처리되던 문제를 고쳤습니다. 운영자가 원래 실패와 수정 결과를 다시 확인하고 변경을 병합했습니다.
 
-### 12 · 고친 두 문제 뒤에 생긴 새 오류까지 찾아내다
+[사례 자세히](CASES.ko.md#11) · [운영자의 전후 대조](https://github.com/redd34/canitoolcall/pull/31#pullrequestreview-5508476450) · [병합된 PR](https://github.com/redd34/canitoolcall/pull/31)
 
-**CanIToolCall · 별도 빌드 재현·검증기 승인 / 병합 대기**  
-Ollama·llama.cpp의 수정 전후 프로그램을 빌드하고 같은 입력으로 비교하는 검증기를 만들었습니다. 실제 Ollama 변경에서 두 개선과 함께 새 오류를 발견했고, 운영자는 별도 빌드로 재현해 우리 기여를 명시했습니다. 검증기의 후속 보완도 승인받았습니다.  
-[사례 읽기](CASES.ko.md#12) · [운영자의 발견 재현·기여 표기](https://github.com/redd34/canitoolcall/issues/37) · [수정 후 승인](https://github.com/redd34/canitoolcall/pull/33#pullrequestreview-5543659056)
+### 10 · 실패한 삭제를 다시 시도할 수 있도록
 
-### 10 · 실패한 삭제도 다시 시도할 수 있도록
+**Qdrant · 우리 신고에 연결된 외부 수정, v1.20.0 배포**
 
-**Qdrant · 우리 신고에 연결된 외부 수정, 정식 배포판 v1.20.0 반영**
+삭제 중 실패한 데이터가 조회에서만 사라져 재시도하기 어려워지는 조건을 재현했습니다. adityaanikam과 joein이 수정·통합했고, 관리자가 배포판의 해결을 확인했습니다. 최종 구현은 해당 개발자들의 기여입니다.
 
-삭제가 중간에 실패하면 저장소에 남은 데이터가 조회 결과에서만 사라져 재시도조차 못 하는 조건을 재현했습니다. adityaanikam과 joein이 수정·통합했고, 관리자가 10월 23일 v1.20.0 해결을 확인했습니다. 같은 여섯 로컬 시나리오에서 구버전의 네 실패가 새 배포판에서는 모두 통과했습니다. 최종 구현은 해당 개발자들의 기여입니다.
+[사례 자세히](CASES.ko.md#10) · [관리자 배포 확인](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021)
 
-[사례 자세히](CASES.ko.md#10) · [관리자 확인](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021) · [배포판 재검증](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6363499667)
+## 전체 공개 사례
 
-### 01 · 승인이 다른 요청을 실행하지 않도록
+**16개는 선별한 협업 사례 수입니다.** 병합 PR 16개, 독립 결함 16개, 고객 16명이라는 뜻이 아닙니다. 같은 작업의 댓글·후속 검사·통합 PR을 따로 더하지 않습니다. 사례 번호는 기존 기록과 연결되도록 유지합니다.
 
-**Hermes Agent · 작성자 브랜치에 패치·검사 반영**  
-대기 중인 모델 전환 승인과 원래 요청을 정확히 연결하는 패치·회귀검사를 제공했습니다. 작성자는 파일을 그대로 반영하고 관련 검사를 실행했다고 확인했습니다.  
-[사례 읽기](CASES.ko.md#01) · [작성자의 반영 확인](https://github.com/NousResearch/hermes-agent/pull/22982#issuecomment-5643327201)
+| 사례 | 우리가 보탠 것 | 공개 원문으로 확인되는 결과 |
+| :--- | :--- | :--- |
+| [01 · Hermes](CASES.ko.md#01) | 승인과 원래 요청의 연결을 보존하는 패치·검사 | [작성자 브랜치에 그대로 반영](https://github.com/NousResearch/hermes-agent/pull/22982#issuecomment-5643327201) |
+| [02 · Hermes](CASES.ko.md#02) | 실제 HTTP 연결로 복구 조건을 구별한 검사 | [검사 재사용·공동 저작 표기](https://github.com/NousResearch/hermes-agent/pull/121944#issuecomment-5863926910) |
+| [03 · LangGraph](CASES.ko.md#03) | 중첩 작업의 기존 호환성 규칙 검토 | [제안 작성자가 설계 교정](https://github.com/langchain-ai/langgraph/issues/9072#issuecomment-5980134186) |
+| [04 · Total Agent Memory](CASES.ko.md#04) | 저장된 평가 판정과 보고 표현 검토 | [공개 보고서에 영석·제로 기여 명시](https://github.com/vbcherepanov/total-agent-memory/commit/55d0ab0124ca4fca81479a5bcafa262aaaf0e19e) |
+| [05 · Hermes](CASES.ko.md#05) | 늦게 온 복원 응답이 새 선택을 덮는 조건 검토 | [작성자가 실패 확인·수정 보고](https://github.com/NousResearch/hermes-agent/pull/130126#issuecomment-5932499656) |
+| [06 · Hermes](CASES.ko.md#06) | 중단 표시를 인용한 정상 JSON의 경계 제시 | [작성자가 회귀검사 추가](https://github.com/NousResearch/hermes-agent/pull/107809#issuecomment-5931462372) |
+| [07 · Hermes / Signal](CASES.ko.md#07) | 개인 메모와 그룹 동기화를 분리하는 설정 제안 | [참여자가 구현·기기 실사용 확인](https://github.com/NousResearch/hermes-agent/issues/121970#issuecomment-5823143850) |
+| [08 · Hermes](CASES.ko.md#08) | 명령줄 중단 안내의 조건·위치·문구 검토 | [후속 구현에서 기여 표기](https://github.com/NousResearch/hermes-agent/pull/133858) · [정정·후속 이력](updates/2026-10-22-hermes-case-08.ko.md) |
+| [09 · Mem0](CASES.ko.md#09) | 검색 순위가 뒤집히는 반례 제시 | [다른 도구 작성자가 설계 비교에 인용](https://github.com/mem0ai/mem0/issues/7535#issuecomment-5992249148) |
+| [10 · Qdrant](CASES.ko.md#10) | 실패한 영구 삭제의 재시도 문제 재현·신고 | [연결된 외부 수정이 v1.20.0에 배포](https://github.com/qdrant/qdrant-client/issues/1510#issuecomment-6360867021) |
+| [11 · CanIToolCall](CASES.ko.md#11) | 불완전한 검증 보고서의 거짓 성공 수정 | [우리 PR #31 병합](https://github.com/redd34/canitoolcall/pull/31) |
+| [12 · CanIToolCall](CASES.ko.md#12) | 실제 엔진 비교 검증기와 회귀 발견 | [운영자 별도 재현·기여 표기](https://github.com/redd34/canitoolcall/issues/37), 구현 승인 기록 |
+| [13 · CanIToolCall](CASES.ko.md#13) | 비슷해 보이는 파서 복구 실패의 원인 분류 | [우리 PR #13 병합](https://github.com/redd34/canitoolcall/pull/13) |
+| [14 · mnemo](CASES.ko.md#14) | 숫자와 문자열의 기억 식별 충돌 수정 | [소유자 검사 통과 보고·승인](https://github.com/sattyamjjain/mnemo/pull/204#issuecomment-6096480334) |
+| [15 · Mem0](CASES.ko.md#15) | 목록 형식 변경이 놓친 동기·비동기 삭제 경로 검토 | [작성자 브랜치의 두 경로·검사 수정](https://github.com/mem0ai/mem0/pull/7647#issuecomment-6347118756) |
+| [16 · Hermes](cases/16-hermes-config-warning.ko.md) | 개인 설정을 노출하지 않는 설정 읽기 실패 경고 | [우리 작업을 포함한 관리자 통합 PR #144257 병합](https://github.com/NousResearch/hermes-agent/pull/144257) |
 
-### 02 · 연결 오류의 원인을 실제 통신으로 구별하다
+**읽는 기준:** 브랜치 반영·사용 보고·승인은 병합과 다르고, 병합은 배포와 다릅니다. 표는 입증된 사건을 요약하며 모든 PR의 실시간 상태판은 아닙니다. 각 상세 글의 작성일·확인 판본·남은 범위를 함께 봅니다. 2026-10-27 정리에서는 사례 16의 연결·병합을 새로 확인했고, 01~15의 과거 검사를 다시 실행한 것으로 세지 않았습니다.
 
-**Hermes Agent · 검사 재사용·공동 저작 표기**  
-일시적인 서버 오류와 통신 방식 거부를 나눠 검사했습니다. 작성자는 검사 커밋을 변경 없이 가져가고 공동 저작 표기를 유지했으며, 자신의 환경에서 관련 43개 검사 통과를 보고했습니다.  
-[사례 읽기](CASES.ko.md#02) · [재사용과 재실행 확인](https://github.com/NousResearch/hermes-agent/pull/121944#issuecomment-5863926910)
+## 우리와 원자료
 
-### 04 · 평가 숫자와 결론의 범위를 함께 검토하다
+영석은 질문과 방향, 판단과 교정을 보탭니다. 제로는 AI 협업 파트너로서 상당한 분석·구현·실험·집필을 수행합니다. 둘의 역할을 지우지 않고, 다른 개발자의 구현·통합·재실행은 그 작성자의 공로로 남깁니다.
 
-**Total Agent Memory · 보고서에 이름 명시**  
-저장된 평가 판정과 보고 표현을 검토했습니다. 결과 보고서에 Youngseok Oh와 Zero의 기술 분석·코드·실행 기여가 명시됐습니다.  
-[사례 읽기](CASES.ko.md#04) · [기여 표기 커밋](https://github.com/vbcherepanov/total-agent-memory/commit/55d0ab0124ca4fca81479a5bcafa262aaaf0e19e)
+[우리 이야기와 연구 작업실](https://github.com/YS-OH-CORE/second-paddle-notes) · [더 넓은 공개 작업 이력](https://github.com/YS-OH-CORE/second-paddle-notes/blob/main/WORK.md) · [공개·갱신 기준](PUBLICATION.md) · [활동 후원](https://ko-fi.com/ysohcore)
 
-## 더 살펴보기
+모든 공개 활동이 이 선별집의 사례 수에 포함되지는 않습니다. 진행 중인 제안과 더 넓은 검토 기록은 공개 작업 이력에서 날짜와 함께 읽을 수 있습니다. 사적인 대화·계정 정보·비공개 운영 자료는 공개하지 않습니다.
 
-| 사례 | 무엇을 보탰나 | 외부에서 확인된 변화 |
-|---|---|---|
-| [15 · 삭제 코드에 남은 낡은 목록 가정](CASES.ko.md#15) | 실제 저장소의 16개 사례로 동기·비동기 소비 경로 누락 발견 | 작성자가 두 경로와 회귀검사를 수정. 정확한 수정판 16/16 재검증. **작성자 브랜치·미병합**. |
-| [13 · 같은 ‘실패’ 안에 섞인 원인을 구별하다](CASES.ko.md#13) | 아홉 가지 도구 호출 복구 불일치의 분류·설명 보완 | 운영자가 일부 입력을 직접 재생하고 승인한 뒤 CanIToolCall에 병합 |
-| [14 · 숫자 42와 글자 “42”를 다른 사실로](CASES.ko.md#14) | 기억의 사실 식별 단계에서 JSON 타입 충돌을 막는 수정·검사 | mnemo 소유자의 11개 검사 통과 보고·승인. 기여자 서명과 CI 진행이 남은 미병합 PR |
-| [03 · 코드가 되기 전에 호환성 문제를 잡다](CASES.ko.md#03) | 같은 인계 명령을 둘로 잘못 세는 조건 검토 | 제안 작성자가 기존 제외 규칙을 유지하도록 설계를 교정하고 감사 |
-| [05 · 늦은 응답이 새 선택을 덮지 않도록](CASES.ko.md#05) | 교체된 세션 복원 요청과 종료된 화면의 경계 검토 | 작성자가 두 실패를 확인하고 수정했다고 보고 |
-| [06 · 중단 문구도 정상 데이터일 수 있다](CASES.ko.md#06) | 정상 데이터가 실행 중단으로 오인되는 경계 제시 | 작성자 회귀검사 추가·후속 기여자의 남은 경계 재현 |
-| [07 · Signal 개인 메모와 그룹 메시지 분리](CASES.ko.md#07) | 기본 동작을 유지하는 좁은 설정·처리 방식 제안 | 참여자의 구현·보조 기기 실사용 확인 |
-| [08 · 명시적 중단과 리다이렉트 구분](CASES.ko.md#08) | 중단 분류의 분기 조건 검토 | 작성자의 좁은 방어 강화 반영과 더 넓은 원인 설명 교정 |
-| [09 · 순위 반례가 다른 설계의 비교 근거로](CASES.ko.md#09) | 결과에 나오지 않는 오래된 후보가 순위를 바꾸는 반례 | 다른 메모리 도구 작성자가 우리 계정을 명시해 기존 설계와 비교 |
+## 이전 판본과 후속
 
-## 함께한 방식
+[23일 Qdrant·Mem0 후속](updates/2026-10-23-qdrant-mem0.ko.md) · [22일 Hermes 후속](updates/2026-10-22-hermes-case-08.ko.md) · [정리 전 첫 화면](https://github.com/YS-OH-CORE/contribution-portfolio/blob/dbcbda5d4afd435d511e15391630b1a5ffe559a1/README.md) · [이전 상세 근거 색인 원문](https://github.com/YS-OH-CORE/contribution-portfolio/blob/dbcbda5d4afd435d511e15391630b1a5ffe559a1/evidence.json)
 
-**영석은 질문·방향·교정을 제공하고, Zero는 AI로서 분석·구현·검사·설명을 수행합니다.** 외부 개발자의 원래 기능 구현, 통합, 재실행은 그 작성자의 기여입니다. 상대도 AI 도움을 공개한 경우 그 사실을 사례에 남겼습니다.
-
-검사 수치는 연결된 실행 기록과 작성자 보고의 범위로 읽습니다. 실제 엔진 비교, 합성 회귀검사, 모듈 검사와 전체 제품 품질은 서로 다릅니다. 같은 검사를 여러 번 더해 성과 수를 늘리지 않습니다. 상세 사례에는 확인한 판본·날짜와 남은 조건을 함께 적었습니다.
-
-## 다음 기여도 같은 방식으로
-
-실제 작업과 공개 원문에서 가치가 확인된 사례를 골라 보탭니다. 같은 문제의 후속 확인은 기존 사례를 보강합니다. 원래 기록을 보존하고, 공개 가능한 기술 내용과 상대의 확인을 이 모음에서 읽기 쉽게 연결합니다.
-
-[공개·갱신 기준](PUBLICATION.md) · [실험과 기술 기록](https://github.com/YS-OH-CORE/second-paddle-notes) · [Ko-fi로 활동 후원](https://ko-fi.com/ysohcore)
-
----
-
-첫 공개 **2026-10-06** · 현재 **15개 사례** · 최신 갱신 **2026-10-23**. 사례 10·15는 10월23일, 사례 08은 10월22일 후속을 반영합니다. 다른 사례는 각 원문의 날짜와 확인 범위를 따릅니다.
+첫 공개 2026-10-06 · 공개 목차 정리 2026-10-27 · **16개 선별 사례**. 원자료와 기존 사례 번호는 이어집니다.
